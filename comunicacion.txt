@@ -1,0 +1,3 @@
+Aaron: Diseño de Formulario de Registro
+Ariel: Registro de Usuarios
+Mariano: Diseño de Base de Datos
