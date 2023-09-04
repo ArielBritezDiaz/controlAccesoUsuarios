@@ -1,16 +1,10 @@
 <?php
-
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "control_acceso";
-
-$conexion = require("./conexion.php");
+include("conexion.php");
 
 if(isset($_POST['registrar'])) {
 
-    $usuarioForm = $_POST[''];
-    $contrasenia = $_POST[''];
+    $usuarioForm = $_POST['usuario'];
+    $contrasenia = $_POST['contrasenia'];
 
     $contrasenia = password_hash($contrasenia, PASSWORD_DEFAULT);
 
@@ -20,11 +14,11 @@ if(isset($_POST['registrar'])) {
 
         move_uploaded_file($dirFoto, $nameFoto);
 
-        $imagen = redimensionarImg($nameFoto, 100, 100);
+        $imagen = $nameFoto;
 
         unlink($nameFoto);
     } else {
-        $imagen = "";
+        echo "No se subió una imagen";
     }
 
     $sqlInsert = "INSERT INTO usuarios(Nbr_u, Img_u, Pass_u) VALUES ('$usuarioForm', '$contrasenia', '$imagen')";
