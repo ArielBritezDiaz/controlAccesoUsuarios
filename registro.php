@@ -6,6 +6,8 @@ if(isset($_POST['registrar'])){
     $email = $_POST['email'];
     $token = time();
 
+    $contrasenia = password_hash($contrasenia, PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO usuarios(Nbr_u, Pass_u, email_u, token_u) VALUES ('$usuario', '$contrasenia', '$email', '$token')";
     $consultaInsertar = mysqli_query($conexion, $sql);
 ?>
@@ -16,13 +18,13 @@ if(isset($_POST['registrar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>registrar</title>
 </head>
 <body>
     <script>
     let url_final = 'https://formsubmit.co/ajax/<?php echo $email;?>'
     let usuario = '<?php echo $usuario;?>'
-    let mensaje = 'Valide su correo: http://localhost/controlAcceso/controlAccesoUsuarios/registro.php?token=<?php echo $token;?>'
+    let mensaje = 'Valide su correo: http://localhost/controlAccesoUsuarios/registro.php?token=<?php echo $token;?>'
 
         $.ajax({
     method: 'POST',
@@ -48,12 +50,20 @@ if(isset($_GET['send'])){
     }
 }
     if(isset($_GET['token'])){
+        session_start();//The session starts
         $token2 = $_GET['token'];
         $sql2 = "SELECT * FROM usuarios WHERE token_u = '$token2'";
         $consultaToken = mysqli_query($conexion, $sql2);
+        $registro = mysqli_fetch_assoc($consultaToken);
         if(mysqli_num_rows($consultaToken) > 0){
             $sql3 = "UPDATE usuarios SET token_u = 1 WHERE token_u = '$token2'";
             $consultaValidacion = mysqli_query($conexion, $sql3) ? print('Usuario validado, ya puede iniciar sesion') : print('Token invalido, el token no existe');
+            $_SESSION['usuario'] = $registro['Nbr_u'];
+            header('location:inicio.php');
+        }
+        else{
+            echo 'El usuario no existe, debe registrarse';
+            session_destroy();
         }
     }
 ?>
