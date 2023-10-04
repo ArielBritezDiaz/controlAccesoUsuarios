@@ -8,9 +8,18 @@ if(isset($_POST['registrar'])){
 
     $contrasenia = password_hash($contrasenia, PASSWORD_DEFAULT);
 
+    $sql4 = "select * FROM usuarios WHERE email_u = '$email'";
+    $consultaMail = mysqli_query($conexion, $sql4);
+
+    if(mysqli_num_rows($consultaMail) > 0){
+        echo 'Ya existe un usuario registrado con este correo';
+    }
+    else{
     $sql = "INSERT INTO usuarios(Nbr_u, Pass_u, email_u, token_u) VALUES ('$usuario', '$contrasenia', '$email', '$token')";
     $consultaInsertar = mysqli_query($conexion, $sql);
+    }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
