@@ -7,14 +7,15 @@ include("conexion.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="iniciar.css">
     <title>Login</title>
     <div class="login">
     <img src="Logo.svg" class="logo">
+    <p class="title">Iniciar sesion</p>
     <form action=" " method="post" class="formu">
-        <input type="text" placeholder="usuario" name="usuario">
-        <input type="password" placeholder="contraseña" name="contrasenia">
-        <input type="submit" value="Enviar" name="envio">
+        <input type="text" placeholder="Usuario" required name="usuario">
+        <input type="password" placeholder="Contraseña" required name="contrasenia" >
+        <input type="submit" value="Iniciar sesion" class="enviar" name="envio">
     </form>
     </div>
 </head>
