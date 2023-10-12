@@ -10,11 +10,17 @@ include("conexion.php");
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form action="" method="POST">
-    <label for="">Recuperar contraseña</label>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="submit" name="recuperar" value="Recuperar">
-    </form>
+    <?php
+    if(isset($_GET['rec'])){
+        ?>
+        <form action="" method="POST">
+        <label for="">Recuperar contraseña</label>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="submit" name="recuperar" value="Recuperar">
+        </form>
+        <?php
+    }
+    ?>
     
 
 <?php
@@ -63,22 +69,24 @@ include("conexion.php");
     }
 
     if(isset($_GET['token'])){
-
-        if(isset($_POST['confirmar'])){
-            session_start();//The session starts
+            // session_start();//The session starts
             $token2 = $_GET['token'];
             $sql2 = "SELECT * FROM usuarios WHERE token_u = '$token2'";
             $consultaToken = mysqli_query($conexion, $sql2);
             $registro = mysqli_fetch_assoc($consultaToken);
             if(mysqli_num_rows($consultaToken) > 0){
                 ?>
+                <form action="" method="get">
                 <label for="">Ingrese su nueva contraseña</label>
                 <input type="password" name="contrasenia" placeholder="Contraseña" required>
                 <input type="submit" name="confirmar" value="Confirmar">
+                </form>
                 <?php
             }
+            if(isset($_GET['confirmar'])){
+                    echo "<script>window.location = 'login.php'</script>";
+                }
         }
-    }
 ?>
 </body>
 </html>

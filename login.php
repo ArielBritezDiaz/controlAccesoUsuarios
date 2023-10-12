@@ -17,7 +17,7 @@ include("conexion.php");
         <input type="password" placeholder="Contraseña" required name="contrasenia" >
         <input type="submit" value="Iniciar sesion" class="enviar" name="envio">
     </form>
-        <a href="recuperar.php">Olvide mi contraseña</a>
+        <a href="recuperar.php?rec">Olvide mi contraseña</a>
     </div>
 </head>
 <body>

@@ -1,15 +1,5 @@
 <?php
 include("conexion.php");
-if(isset($_POST['registrar'])){
-    $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['contrasenia'];
-    $email = $_POST['email'];
-    $token = time();
-
-    $contrasenia = password_hash($contrasenia, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO usuarios(Nbr_u, Pass_u, email_u, token_u) VALUES ('$usuario', '$contrasenia', '$email', '$token')";
-    $consultaInsertar = mysqli_query($conexion, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +11,27 @@ if(isset($_POST['registrar'])){
     <title>registrar</title>
 </head>
 <body>
+    <?php
+    if(isset($_POST['registrar'])){
+        $usuario = $_POST['usuario'];
+        $contrasenia = $_POST['contrasenia'];
+        $email = $_POST['email'];
+        $token = time();
+
+        $contrasenia = password_hash($contrasenia, PASSWORD_DEFAULT);
+
+        $sql4 = "SELECT * FROM usuarios WHERE email_u = '$email'";
+        $consultaMail = mysqli_query($conexion, $sql4);
+        $registroMail = mysqli_fetch_assoc($consultaMail);
+
+        if(mysqli_num_rows($consultaMail) > 0){
+            echo 'Ya existe un usuario registrado con este correo';
+        }
+        else{
+        $sql = "INSERT INTO usuarios(Nbr_u, Pass_u, email_u, token_u) VALUES ('$usuario', '$contrasenia', '$email', '$token')";
+        $consultaInsertar = mysqli_query($conexion, $sql);
+        
+    ?>
     <script>
     let url_final = 'https://formsubmit.co/ajax/<?php echo $email;?>'
     let usuario = '<?php echo $usuario;?>'
@@ -41,6 +52,7 @@ if(isset($_POST['registrar'])){
     </script>
 
 <?php }
+    }
 if(isset($_GET['send'])){
     if(($_GET['send']==1)){
         echo 'Correo enviado, por favor valide';
