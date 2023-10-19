@@ -33,11 +33,11 @@ include("conexion.php");
         <p class="title">Iniciar sesión</p>
         <form action=" " method="post" class="formu">
             <div class="input-container">
-                <input type="text" placeholder="Usuario" required name="usuario" pattern=".{8,}">
+                <input type="text" placeholder="Usuario" required name="usuario">
                 <i class="fa-solid fa-user" style="color: #cc0000;"></i>
             </div>
             <div class="input-container">
-                <input type="password" placeholder="Contraseña" required name="contrasenia" pattern=".{8,}">
+                <input type="password" placeholder="Contraseña" required name="contrasenia">
                 <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
             </div>
             <a href="recuperar.php?rec" class="recuperar">Olvide mi contraseña</a>

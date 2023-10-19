@@ -3,16 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="estilos_form.css">
+    <title>CMF - Registro</title>
+    <link rel="stylesheet" href="registrar.css">
+
+    <!-- Title font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen&display=swap" rel="stylesheet">
+
+    <!-- Input font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <body>
-    
-    <form action="registro.php" method="POST">
-        <input type="text" name="usuario" placeholder="Ususario" required>
-        <input type="password" name="contrasenia" placeholder="Contraseña" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="submit" name="registrar" value="Registrar">
-    </form>
+    <div class="container">
+        <div class="leftImage">
+        </div>
+        <div class="singUp">
+            <img src="logor&b.svg" class="logo">
+            <p class="title">Crear cuenta</p>
+            <form action="registro.php" method="POST" class="formu">
+                <div class="input-container">
+                    <input type="text" name="usuario" placeholder="Usuario" pattern=".{8,}" required>
+                    <i class="fa-solid fa-user" style="color: #cc0000;"></i>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="contrasenia" placeholder="Contraseña" pattern=".{8,}" required>
+                    <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
+                </div>
+                <div class="input-container">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope" style="color: #cc0000;"></i>
+                </div>
+                <input type="submit" name="registrar" value="Registrar" class="enviar">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
