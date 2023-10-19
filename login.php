@@ -7,7 +7,7 @@ include("conexion.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="iniciar.css">
+    <link rel="stylesheet" href="styles/iniciar.css">
 
     <!-- Title font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@ include("conexion.php");
         <div class="leftImage">
         </div>
         <div class="login">
-        <img src="logor&b.svg" class="logo">
+        <img src="src/images/logo/logo.svg" class="logo">
         <p class="title">Iniciar sesión</p>
         <form action=" " method="post" class="formu">
             <div class="input-container">

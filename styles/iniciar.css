@@ -12,7 +12,7 @@
 
 .leftImage{
     flex-basis: 50%;
-    background-image: url(background.png);
+    background-image: url(../src/images/login.png);
     height: 100vh;
     background-position: center;
     background-size: cover;
