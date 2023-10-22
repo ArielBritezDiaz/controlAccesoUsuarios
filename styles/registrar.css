@@ -25,11 +25,11 @@
     flex-direction: column;
 }
 
-.logo{
+/* .logo{
     width: 200px;
     display: block;
     margin: 40px auto;
-}
+} */
 
 .title{
     color: #cc0000;
@@ -96,6 +96,7 @@ input::placeholder{
 
 input:focus + i{
     display: none;
+    color: transparent;
 }
 
 input:valid + i{
