@@ -123,6 +123,6 @@ input:focus + i{
 }
 
 *::selection{
-    color: wheat;
+    color: #f0f8ff;
     background-color: #cc0000;
 }

@@ -7,6 +7,13 @@ include("conexion.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/registrarPasos.css">
+
+    <!-- Title font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sen&display=swap" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>registrar</title>
 </head>
@@ -25,7 +32,7 @@ include("conexion.php");
         $registroMail = mysqli_fetch_assoc($consultaMail);
 
         if(mysqli_num_rows($consultaMail) > 0){
-            echo 'Ya existe un usuario registrado con este correo';
+            echo '<p class="title">Ya existe un usuario registrado con este correo</p>';
         }
         else{
         $sql = "INSERT INTO usuarios(Nbr_u, Pass_u, email_u, token_u) VALUES ('$usuario', '$contrasenia', '$email', '$token')";
@@ -55,10 +62,10 @@ include("conexion.php");
     }
 if(isset($_GET['send'])){
     if(($_GET['send']==1)){
-        echo 'Correo enviado, por favor valide';
+        echo '<p class="title">Correo enviado, por favor valide</p>';
     }
     else{
-        echo 'Error al enviar correo de validacion';
+        echo '<p class="title">Error al enviar correo de validacion</p>';
     }
 }
     if(isset($_GET['token'])){
@@ -74,10 +81,11 @@ if(isset($_GET['send'])){
             header('location:inicio.php');
         }
         else{
-            echo 'El usuario no existe, debe registrarse';
+            echo '<p class="title">El usuario no existe, debe registrarse</p>';
             session_destroy();
         }
     }
 ?>
+
 </body>
 </html>
