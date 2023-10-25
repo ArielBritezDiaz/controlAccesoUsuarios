@@ -118,8 +118,12 @@ input:focus::placeholder {
     color: transparent;
 }
 
+input:valid + i{
+    display: none;
+}
+
 input:focus + i{
-    color: transparent;
+    display: none;
 }
 
 *::selection{
