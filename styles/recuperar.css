@@ -12,6 +12,12 @@ body{
     flex-direction: column;
 }
 
+.title{
+    color: #cc0000;
+    font-family: 'Roboto';
+    font-size: 3em;
+}
+
 label{
     color: #cc0000;
     font-family: 'Roboto';
@@ -69,7 +75,6 @@ input::placeholder{
     font-size: 20px;
     font-family: 'Open sans';
 }
-
 
 input:focus + i{
     display: none;

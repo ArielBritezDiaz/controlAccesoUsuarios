@@ -9,8 +9,8 @@ include("conexion.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/recuperar.css">
 
-     <!-- Font-Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
     <!-- Title font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,31 +75,35 @@ include("conexion.php");
             <?php
         }
         else{
-            echo 'Usuario no existe, debe registrarse';
+            echo '<p class="title">Usuario no existe, debe registrarse</p>';
         }
     }
 
     if(isset($_GET['send'])){
         if(($_GET['send']==1)){
-            echo 'Correo enviado, por favor valide';
+            echo '<p class="title">Correo enviado, por favor valide</p>';
         }
         else{
-            echo 'Error al enviar correo de validacion';
+            echo '<p class="title">Error al enviar correo de validacion</p>';
         }
     }
 
     if(isset($_GET['token'])){
-            // session_start();//The session starts
             $token2 = $_GET['token'];
             $sql2 = "SELECT * FROM usuarios WHERE token_u = '$token2'";
             $consultaToken = mysqli_query($conexion, $sql2);
             $registro = mysqli_fetch_assoc($consultaToken);
             if(mysqli_num_rows($consultaToken) > 0){
                 ?>
-                <form action="" method="get">
+                <form action="" method="GET">
                 <label for="">Ingrese su nueva contraseña</label>
-                <input type="password" name="contrasenia" placeholder="Contraseña" required>
-                <input type="submit" name="confirmar" value="Confirmar">
+                <div class="inputs">
+                    <div class="input-container">
+                        <input type="text" name="contrasenia" placeholder="Contraseña" min="8" class="password" required>
+                        <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
+                    </div>
+                    <input type="submit" name="confirmar" value="Confirmar" class="send">
+                </div>
                 </form>
                 <?php
             }
