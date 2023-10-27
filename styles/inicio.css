@@ -8,6 +8,8 @@ body{
     background-color: #0c0c0F;
 }
 
+/* Header and nav styles */
+
 .slider{
     background-image: url(images/img1.png);
     background-size: cover;
@@ -36,11 +38,12 @@ body{
     font-size: 1.1em;
     padding: 0 20px;
     color: aliceblue;
-    transition: 3s;
+    
 }
 
 a:hover{
     border-bottom: 2px solid aliceblue;
+    transition: 0.5s;
 }
 
 a{
@@ -94,6 +97,48 @@ a{
         background-image: url(../src/images/slider/img1.png);
         background-size: cover;
     }
+}
+
+/* Categories styles */
+.categories{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    height: 50vh;
+}
+
+.categories img{
+    height: 400px;
+    width: 200px;
+}
+
+article p{
+    font-family: 'Montserrat';
+    font-size: 2em;
+    text-align: center;
+    padding: 15px 0;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.cars a:hover img {
+    border: 5px solid rgba(24, 61, 222, 88);
+    transition: border 0.5s;
+}
+
+.motorbike a:hover img {
+    border: 5px solid rgba(57, 255, 20, 88);
+    transition: border 0.5s;
+}
+
+.formula a:hover img {
+    border: 5px solid rgba(255, 7, 58, 88);
+    transition: border 0.5s;
+}
+
+.categories article{
+    display: flex;
+    flex-direction: column;
 }
 
 ::selection{
