@@ -4,29 +4,6 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-.logo{
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: 120px;
-}
-
-.footer{
-    background-color: #0c0c0F;
-}
-
-.info{
-    display: flex;
-    justify-content: space-between;
-}
-
-.info p{
-    font-size: 1.2em;
-    color: aliceblue;
-    margin: 10px;
-}
-=======
 body{
     background-color: #0c0c0F;
 }
@@ -127,7 +104,7 @@ a{
     display: flex;
     justify-content: space-evenly;
     padding: 50px 0;
-    height: 50vh;
+    height: 90vh;
 }
 
 .categories img{
@@ -168,4 +145,26 @@ article p{
     color: wheat;
     background-color: #cc0000;
 }
->>>>>>> b924b63704fa6fda8f46aaac9ce272285088eec2
+
+.logo2{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 120px;
+}
+
+.footer{
+    height: 150px;
+    background-color: #0c0c0F;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.info p{
+    margin: 15px;
+    font-family: "montserrat";
+}
