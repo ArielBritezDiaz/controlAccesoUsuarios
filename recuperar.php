@@ -28,6 +28,7 @@ include("conexion.php");
     <?php
     if(isset($_GET['rec'])){
         ?>
+        <a href="login.php"><img src="src/images/backArrow.png"></a>
         <form action="" method="POST">
         <label for="">Recuperar contraseña</label>
         <div class="inputs">
