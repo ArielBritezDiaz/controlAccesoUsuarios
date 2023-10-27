@@ -44,15 +44,15 @@
     <main>
         <section class="categories" id="categories">
             <article class="cars">
-                <p>Autos</p>
+                <p class="autos">utos</p>
                 <a href="#"><img src="src/images/categories/cars.png"></a>
             </article>
             <article class="motorbike">
-                <p>Motos</p>
+                <p class="motos">otos</p>
                 <a href="#"><img src="src/images/categories/motorbike.png"></a>
             </article>
             <article class="formula">
-                <p>Formula</p>
+                <p class="form">ormula</p>
                 <a href="#"><img src="src/images/categories/formula.png"></a>
             </article>
         </section>

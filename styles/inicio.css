@@ -37,18 +37,17 @@ body{
     list-style: none;
     font-size: 1.1em;
     padding: 0 20px;
-    color: aliceblue;
-    
 }
 
 a:hover{
-    border-bottom: 2px solid aliceblue;
-    transition: 0.5s;
+    border-bottom: 2px solid #cc0000;
+    transition: 0.8s;
 }
 
 a{
     text-decoration: none;
     color: aliceblue;
+    padding: 5px 0;
 }
 
 .search{
@@ -110,6 +109,7 @@ a{
 .categories img{
     height: 400px;
     width: 200px;
+    border: none;
 }
 
 article p{
@@ -119,6 +119,21 @@ article p{
     padding: 15px 0;
     color: aliceblue;
     font-weight: bold;
+}
+
+.autos::before{
+    content: 'A';
+    color: #cc0000;
+}
+
+.motos::before{
+    content: 'M';
+    color: #cc0000;
+}
+
+.form::before{
+    content: 'F';
+    color: #cc0000;
 }
 
 .cars a:hover img {
