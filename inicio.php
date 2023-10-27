@@ -43,7 +43,15 @@
     <!-- Categories -->
     <main>
         <section class="categories" id="categories">
-
+            <article class="cars">
+                <a href="#"><img src="src/images/categories/cars.png"></a>
+            </article>
+            <article class="motorbike">
+                <a href="#"><img src="src/images/categories/motorbike.png"></a>
+            </article>
+            <article class="formula">
+                <a href="#"><img src="src/images/categories/formula.png"></a>
+            </article>
         </section>
     </main>
 </head>
