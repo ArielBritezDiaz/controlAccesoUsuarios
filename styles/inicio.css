@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 120px;
+}
+
+.footer{
+    background-color: #0c0c0F;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info p{
+    font-size: 1.2em;
+    color: aliceblue;
+    margin: 10px;
+}
