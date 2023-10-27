@@ -14,7 +14,11 @@
 
     <link rel="stylesheet" href="styles/inicio.css">
     <title>Inicio</title>
-    <!-- Header y nav -->
+</head>
+<body>
+    <!-- Categories -->
+    <main>
+        <!-- Header y nav -->
     <header class="header">
         <nav class="nav">
             <img src="src/images/logo/logor&w.svg" class="logo">
@@ -40,8 +44,6 @@
         </nav>
         <div class="slider"></div>
     </header>
-    <!-- Categories -->
-    <main>
         <section class="categories" id="categories">
             <article class="cars">
                 <p class="autos">utos</p>
@@ -56,8 +58,13 @@
                 <a href="#"><img src="src/images/categories/formula.png"></a>
             </article>
         </section>
+        <footer class="footer">
+            <img src="src/images/logo/logor&w.svg" class="logo2">
+            <div class="info">
+                <p>© 2023 CMF engines</p>
+                <p>cmfengines@gmail.com</p>
+            </div>
+        </footer>
     </main>
-</head>
-<body>
 </body>
 </html>
