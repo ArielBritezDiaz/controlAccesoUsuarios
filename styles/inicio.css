@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.slider{
+    background-image: url(images/img1.png);
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    animation: slide 30s infinite;
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0c0c0F;
+    height: 100px;
+}
+
+.list li{
+    display: inline-block;
+    list-style: none;
+    font-size: 1.1em;
+    padding: 0 20px;
+    color: aliceblue;
+    font-weight: 600;
+    transition: 3s;
+}
+
+a:hover{
+    border-bottom: 2px solid aliceblue;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.search{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1E1E1E;
+    outline: 0;
+}
+
+.search::placeholder{
+    font-weight: 600;
+    color: aliceblue;
+    padding: 10px;
+}
+
+/* Animation */
+@keyframes slide {
+    0%{
+        background-image: url(../src/images/slider/img1.png);
+        background-size: cover;
+    }
+    33%{
+        background-image: url(../src/images/slider/img3.png);
+        background-size: cover;
+    }
+    66%{
+        background-image: url(../src/images/slider/img2.png);
+        background-size: cover;
+    }
+    100%{
+        background-image: url(images/img1.png);
+        background-size: cover;
+    }
+}
