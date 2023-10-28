@@ -28,14 +28,15 @@
             </div>
             <ul class="list">
                 <li><a href="#categories">Categorias</a></li>
-                <li><a href="#">Mis compras</a></li>
                 <?php
             session_start();
             if(isset($_SESSION['usuario'])){
                 $usuario = $_SESSION['usuario'];
                 echo '<li><a href="#">'.$usuario.'</a></li>';
+                echo '<li><a href="#">Mis compras</a></li>';
                 echo '<li><a href="logout.php">Salir</a></li>';
             }else{
+                echo '<li><a href="form_registro.html">Registrarse</a></li>';
                 echo '<li><a href="login.php">Ingresar</a></li>';
                 session_destroy();
             }
