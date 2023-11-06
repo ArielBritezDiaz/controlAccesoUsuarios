@@ -44,7 +44,15 @@ $current_url = $_SERVER['REQUEST_URI'];
             <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>
             <a href="carrito.php">Carrito</a>
             </li>';
-            echo '<li><a href="#">Publicar</a></li>';
+            if(strpos($current_url, 'publicar.php') != false){
+                echo '<li><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>
+                <a href="perfil.php">Perfil</a>
+                </li>';
+                echo '<li><a href="inicio.php">Inicio</a></li>';
+            }
+            else{
+                echo '<li><a href="publicar.php">Publicar</a></li>';
+            }
             echo '<li><a href="logout.php">Salir</a></li>';
         }else{
             echo '<li>

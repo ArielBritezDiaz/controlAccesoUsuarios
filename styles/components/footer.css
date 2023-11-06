@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-
 .logo2{
     display: block;
     margin: 0 auto;
@@ -26,5 +25,5 @@
 
 .info p{
     margin: 15px;
-    font-family: "montserrat";
+    font-family: 'Montserrat', sans-serif;
 }
