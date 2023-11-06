@@ -1,4 +1,12 @@
 /* Footer styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .logo2{
     display: block;
     margin: 0 auto;
