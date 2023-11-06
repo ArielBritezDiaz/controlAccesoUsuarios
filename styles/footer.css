@@ -1,0 +1,22 @@
+/* Footer styles */
+.logo2{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 120px;
+}
+
+.footer{
+    background-color: #0c0c0F;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.info p{
+    margin: 15px;
+    font-family: "montserrat";
+}

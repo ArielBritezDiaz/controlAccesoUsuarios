@@ -1,0 +1,59 @@
+.logo{
+    width: 130px;
+    height: 120px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0c0c0F;
+    height: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.list li{
+    display: inline-block;
+    list-style: none;
+    font-size: 1.1em;
+    padding: 0 20px;
+}
+
+.nav a:hover{
+    border-bottom: 2px solid #cc0000;
+    transition: 0.8s;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 5px 0;
+}
+
+.search{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1E1E1E;
+    outline: 0;
+    color: aliceblue;
+}
+
+.search::placeholder{
+    color: aliceblue;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-container{
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    right: 15px;
+    top: 30%;
+    padding: 0 10px;
+    border-left: 3px solid aliceblue;
+}
