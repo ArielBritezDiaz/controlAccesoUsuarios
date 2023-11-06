@@ -18,7 +18,17 @@ include("conexion.php");
     <?php
     include("includes/nav.php");
     ?>
-
+    <section class="content">
+        <div class="user">
+            <img src="src/images/userDefault.png" class="picture">
+            <a href="#"><i class="fa-solid fa-pencil" style="color: #CC0000;"></i></a>
+        </div>
+    </section>
+    <?php
+    if(isset($_SESSION['usuario'])){
+        echo '<p>'.$_SESSION['usuario'].'</p>';
+    }
+    ?>
     <?php
     include("includes/footer.php");
     ?>

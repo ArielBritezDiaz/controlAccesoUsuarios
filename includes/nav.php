@@ -1,3 +1,6 @@
+<?php
+$current_url = $_SERVER['REQUEST_URI'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,19 +27,24 @@
             <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
         </div>
         <ul class="list">
-        <li><a href="#categories">Categorias</a></li>
         <?php
         session_start();
         if(isset($_SESSION['usuario'])){
             $usuario = $_SESSION['usuario'];
-            echo '<li><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>
-            <a href="perfil.php">Perfil</a>
-            </li>';
+            if(strpos($current_url, 'inicio.php') != false){
+                echo '<li><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>
+                <a href="perfil.php">Perfil</a>
+                </li>';
+            }
+            else if(strpos($current_url, 'perfil.php') != false){
+                echo '<li><a href="inicio.php">Inicio</a></li>';
+            }
+            echo '<li><a href="#categories">Categorias</a></li>';
             echo '<li>
             <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>
             <a href="carrito.php">Carrito</a>
             </li>';
-            echo '<li><a href="#">Mis compras</a></li>';
+            echo '<li><a href="#">Publicar</a></li>';
             echo '<li><a href="logout.php">Salir</a></li>';
         }else{
             echo '<li>
