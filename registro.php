@@ -32,7 +32,7 @@ include("conexion.php");
         $registroMail = mysqli_fetch_assoc($consultaMail);
 
         if(mysqli_num_rows($consultaMail) > 0){
-            echo '<a href="form_registro.html"><img src="src/images/backArrow.png"></a>';
+            echo '<a href="form_registro.html"><img src="src/images/backArrow.svg"></a>';
             echo '<p class="title">Ya existe un usuario registrado con este correo</p>';
         }
         else{
