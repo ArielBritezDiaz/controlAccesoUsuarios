@@ -101,7 +101,6 @@ include("conexion.php");
                 <div class="inputs">
                     <div class="input-container">
                         <input type="text" name="contrasenia" placeholder="Contraseña" min="8" class="password" required>
-                        <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
                     </div>
                     <input type="submit" name="confirmar" value="Confirmar" class="send">
                 </div>
@@ -109,7 +108,7 @@ include("conexion.php");
                 <?php
             }
             if(isset($_GET['confirmar'])){
-                    echo "<script>window.location = 'login.php'</script>";
+                    header("location: login.php");
                 }
         }
 ?>

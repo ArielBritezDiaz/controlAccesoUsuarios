@@ -20,10 +20,20 @@
         session_start();
         if(isset($_SESSION['usuario'])){
             $usuario = $_SESSION['usuario'];
-            echo '<li><a href="#">'.$usuario.'</a></li>';
+            echo '<li><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>
+            <a href="perfil.php">Perfil</a>
+            </li>';
+            echo '<li>
+            <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>
+            <a href="carrito.php">Carrito</a>
+            </li>';
             echo '<li><a href="#">Mis compras</a></li>';
             echo '<li><a href="logout.php">Salir</a></li>';
         }else{
+            echo '<li>
+            <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>
+            <a href="login.php">Carrito</a>
+            </li>';
             echo '<li><a href="form_registro.html">Registrarse</a></li>';
             echo '<li><a href="login.php">Ingresar</a></li>';
             session_destroy();
