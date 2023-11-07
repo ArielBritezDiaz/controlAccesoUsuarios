@@ -17,6 +17,7 @@
 </head>
 <body>
     <!-- Footer -->
+    <hr>
     <footer class="footer">
         <img src="src/images/logo/logor&w.svg" class="logo2">
         <div class="info">
