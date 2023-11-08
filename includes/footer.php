@@ -20,8 +20,10 @@
     <hr>
     <footer class="footer">
         <img src="src/images/logo/logor&w.svg" class="logo2">
-        <div class="info">
+        <div class="info"> 
             <p>© 2023 CMF engines</p>
+            <a href="https://marianojsb.github.io/cmf3d.github.io/"><span class="icon icon-color">
+            </span></a>
             <p>cmfengines@gmail.com</p>
         </div>
     </footer>
