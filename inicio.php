@@ -8,15 +8,24 @@ require_once("includes/showArticles.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Home styles -->
     <link rel="stylesheet" href="styles/inicio.css">
+    <!-- Nav styles -->
+    <link rel="stylesheet" href="styles/components/nav.css">
     <!-- Articles styles -->
     <link rel="stylesheet" href="styles/components/articles.css">
+    <!-- Footer styles -->
+    <link rel="stylesheet" href="styles/components/footer.css">
     <title>Inicio</title>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
     <?php
     include("includes/nav.php");
-    include("includes/header.php");
     ?>
+        <div class="slider"></div>
+    </header>
+
+    <!-- Categories section -->
     <section class="categories" id="categories">
         <article class="cars">
             <p class="autos">utos</p>
@@ -33,11 +42,15 @@ require_once("includes/showArticles.php");
     </section>
     <p class="featured">Articulos destacados</p>
     <hr>
+
+    <!-- Articles section -->
     <section class="articles">
     <?php
     showArticles();
     ?>
     </section>
+    
+    <!-- Footer -->
     <?php
     include("includes/footer.php");
     ?>

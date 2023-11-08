@@ -8,7 +8,36 @@ body{
     background-color: #0c0c0F;
 }
 
-/* Section styles */
+/* Header styles */
+.slider{
+    background-image: url(src/images/slider/img1.png);
+    background-size: cover;
+    width: 100%;
+    height: 75vh;
+    animation: slide 30s infinite;
+}
+
+/* Animation */
+@keyframes slide {
+    0%{
+        background-image: url(src/images/slider/img1.png);
+        background-size: cover;
+    }
+    33%{
+        background-image: url(src/images/slider/img3.png);
+        background-size: cover;
+    }
+    66%{
+        background-image: url(src/images/slider/img2.png);
+        background-size: cover;
+    }
+    100%{
+        background-image: url(src/images/slider/img1.png);
+        background-size: cover;
+    }
+}
+
+/* Categories section styles */
 .categories{
     display: flex;
     justify-content: space-evenly;
