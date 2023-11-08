@@ -21,7 +21,9 @@ body{
 .featured{
     font-size: 2em;
     color: aliceblue;
-    margin: 20px 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .imgArticle{
