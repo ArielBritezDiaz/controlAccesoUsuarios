@@ -34,7 +34,6 @@ body{
 
 .card{
     border-radius: 5px;
-    cursor: pointer;
     background-color: aliceblue;
     margin: 20px 20px;
     max-width: 320px;

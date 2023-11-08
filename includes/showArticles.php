@@ -26,7 +26,7 @@
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$article['stock'].'</p>
-                    <a href="carrito.php?id_articulo='.$article['id_articulo'].'"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar</a>
+                    <a href="cart.php?id_articulo='.$article['id_articulo'].'"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar</a>
             </div>';
         }
     }

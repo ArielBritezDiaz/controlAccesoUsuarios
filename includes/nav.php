@@ -31,6 +31,7 @@ $current_url = $_SERVER['REQUEST_URI'];
         session_start();
         if(isset($_SESSION['usuario'])){
             $usuario = $_SESSION['usuario'];
+
             if(strpos($current_url, 'inicio.php') != false){
                 echo '<li><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>
                 <a href="perfil.php">Perfil</a>
