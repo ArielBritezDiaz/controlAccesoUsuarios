@@ -62,7 +62,7 @@ article p{
 }
 
 .autos::before{
-    content: 'A';
+    content: 'C';
     color: #cc0000;
 }
 

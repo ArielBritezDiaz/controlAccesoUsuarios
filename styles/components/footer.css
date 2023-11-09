@@ -1,21 +1,22 @@
 /* Footer styles */
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.logo2{
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: 120px;
+.footer{
+    background-color: #0C0C0F;
 }
 
-.footer{
-    background-color: #0c0c0F;
+.footer .contact{
+    font-size: 2em;
+    color: aliceblue;
+    text-align: center;
+    margin: 10px;
 }
+
+/* CMF 3D logo */
 
 .icon{
     display: inline-block;
@@ -33,14 +34,33 @@
     background-image: url('../../src/images/logo/cmf-3d/red.svg');
 }
 
+/* Instagram logo */
+
+.ig{
+    display: inline-block;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    transition: all 0.4s ease-in-out;
+    margin: 10px;
+}
+
+.ig-color{
+    background-image: url('../../src/images/logo/instagram/white.svg');
+}
+
+.ig-color:hover{
+    background-image: url('../../src/images/logo/instagram/second.svg');
+}
+
 .info{
     display: flex;
     justify-content: space-between;
-    color: aliceblue;
     align-items: center;
+    color: aliceblue;
 }
 
 .info p{
-    margin: 15px;
+    margin: 10px;
     font-family: 'Montserrat', sans-serif;
 }
