@@ -16,6 +16,9 @@ $current_url = $_SERVER['REQUEST_URI'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
 
+    <!-- Searcher cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -23,7 +26,7 @@ $current_url = $_SERVER['REQUEST_URI'];
     <nav class="nav">
         <img src="src/images/logo/logor&w.svg" class="logo">
         <div class="input-container">
-            <input type="search" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="buscar_prod($('#buscar').val());>
+''          <input type="text" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="busqueda($('#search').val());">
             <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
         </div>
         <ul class="list">
@@ -65,5 +68,6 @@ $current_url = $_SERVER['REQUEST_URI'];
         ?>
         </ul>
     </nav>
+    <script src="js/buscador.js"></script>
 </body>
 </html>    

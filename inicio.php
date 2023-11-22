@@ -14,6 +14,9 @@ require_once("includes/showArticles.php");
     <link rel="stylesheet" href="styles/components/articles.css">
     <!-- Footer styles -->
     <link rel="stylesheet" href="styles/components/footer.css">
+
+    <!-- Searcher cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Inicio</title>
 </head>
 <body>
@@ -45,14 +48,15 @@ require_once("includes/showArticles.php");
 
     <!-- Articles section -->
     <section class="articles">
-    <?php
-    showArticles();
-    ?>
+
+    <div id="datos_buscador"></div>
+
     </section>
     
     <!-- Footer -->
     <?php
     include("includes/footer.php");
     ?>
+    <script src="js/buscador.js"></script>
 </body>
 </html>
