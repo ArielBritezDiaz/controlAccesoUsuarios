@@ -13,6 +13,7 @@
     <title>Inicio</title>
 </head>
 <body>
+
 <?php
     function showArticles(){
         include ("conexion.php");
@@ -31,5 +32,6 @@
         }
     }
 ?>
+
 </body>
 </html>

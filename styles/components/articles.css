@@ -9,21 +9,56 @@ body{
     font-family: 'Jura';
 }
 
+/* Show articles styles */
+
 #datos_buscador{
-    padding: 50px 0;
+    padding: 40px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
+/* Searcher styles */
+
+.search{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1E1E1E;
+    outline: 0;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.search::placeholder{
+    color: aliceblue;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.con{
+    display: flex;
+    justify-content: center;
+}
+
+.input-container{
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    right: 15px;
+    top: 30%;
+    padding: 0 10px;
+    border-left: 3px solid aliceblue;
+}
+
 .articles{
     background-color: #641414;
     padding: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 
 .featured{

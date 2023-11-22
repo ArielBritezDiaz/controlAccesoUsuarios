@@ -49,7 +49,14 @@ require_once("includes/showArticles.php");
     <!-- Articles section -->
     <section class="articles">
 
-    <div id="datos_buscador"></div>
+        <div class="con">
+        <div class="input-container">
+            <input type="text" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="busqueda($('#search').val());">
+            <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
+        </div>
+        </div>
+
+        <div id="datos_buscador"></div>
 
     </section>
     
