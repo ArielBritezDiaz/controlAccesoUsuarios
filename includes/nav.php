@@ -23,7 +23,7 @@ $current_url = $_SERVER['REQUEST_URI'];
     <nav class="nav">
         <img src="src/images/logo/logor&w.svg" class="logo">
         <div class="input-container">
-            <input type="search" name="busqueda" class="search" pattern placeholder="Buscar producto">
+            <input type="search" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="buscar_prod($('#buscar').val());>
             <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
         </div>
         <ul class="list">
