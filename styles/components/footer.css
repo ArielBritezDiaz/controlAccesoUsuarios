@@ -60,6 +60,12 @@
     color: aliceblue;
 }
 
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .info p{
     margin: 10px;
     font-family: 'Montserrat', sans-serif;

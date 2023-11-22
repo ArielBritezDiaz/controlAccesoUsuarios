@@ -20,12 +20,14 @@
     <hr>
     <footer class="footer">
         <p class="contact">Contactanos en</p>
+        <div class="social">
+            <a href="https://marianojsb.github.io/cmf3d.github.io/"><span class="icon icon-color">
+            </span></a>
+            <a href="https://www.instagram.com/cmfengines/"><span class="ig ig-color">
+            </span></a>
+        </div>
         <div class="info">
             <p>© 2023 CMF engines</p>
-                <a href="https://marianojsb.github.io/cmf3d.github.io/"><span class="icon icon-color">
-                </span></a>
-                <a href="https://www.instagram.com/cmfengines/"><span class="ig ig-color">
-                </span></a>
             <p>cmfenginescorporation@gmail.com</p>
         </div>
     </footer>
