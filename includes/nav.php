@@ -24,13 +24,10 @@ $current_url = $_SERVER['REQUEST_URI'];
         <img src="src/images/logo/logor&w.svg" class="logo">
         <ul class="list">
         <?php
-        session_start();
         if(isset($_SESSION['usuario'])){
-            $usuario = $_SESSION['usuario'];
-
             if(strpos($current_url, 'inicio.php') != false){
                 echo '<li>
-                <a href="perfil.php"><i class="fa-regular fa-user" style="color: #f0f8ff;"></i></a>
+                <a href="perfil.php"><i class="fa-regular fa-user" style="color: #f0f8ff;"></i>'.$_SESSION['usuario'].'</a>
                 </li>';
             }
             else if(strpos($current_url, 'perfil.php') != false){
