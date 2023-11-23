@@ -20,6 +20,12 @@ require_once('includes/functionCar.php');
 <body>
     <?php
     include("includes/nav.php");
+
+    //Si existe el producto
+    if(isset($_GET['id_producto'])){
+        agregarProductoCarrito($_GET['id_producto']);//Primer producto
+    }
+
     include("includes/footer.php");
     ?>
 </body>
