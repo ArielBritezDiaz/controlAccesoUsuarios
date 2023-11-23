@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario'])){
+require_once('conexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,3 +28,9 @@
     ?>
 </body>
 </html>
+<?php
+}
+else{
+    header('location: login.php?senial');
+}
+?>
