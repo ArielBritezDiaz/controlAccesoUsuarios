@@ -19,11 +19,6 @@ require_once('conexion.php');
 <body>
     <?php
     include("includes/nav.php");
-    ?>
-    <header class="header">
-        <div class="slider"></div>
-    </header>
-    <?php
     include("includes/footer.php");
     ?>
 </body>
