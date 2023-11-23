@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conexion.php");
 ?>
 
@@ -49,18 +50,16 @@ include("conexion.php");
     </div>
 <?php
 if(isset($_POST['envio'])){
-    session_start();
     $usuario = $_POST['usuario'];
     $contrasenia = $_POST['contrasenia'];
 
-    $sql = "SELECT * FROM usuarios WHERE nbr_u = '$usuario' AND token_u =  1";
+    $sql = "SELECT * FROM usuarios WHERE Nbr_u = '$usuario' AND token_u =  1";
     $consulta = mysqli_query($conexion, $sql);
     if(mysqli_num_rows($consulta) > 0){
         $registro = mysqli_fetch_assoc($consulta);
         if(password_verify($contrasenia, $registro['Pass_u'])){
             $_SESSION['usuario'] = $usuario;
             header('location:inicio.php');
-            echo $_SESSION['usuario'];
         }
         else{
             echo '<script>alert("Contraseña incorrecta")</script>';

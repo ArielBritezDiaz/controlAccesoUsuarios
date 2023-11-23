@@ -107,11 +107,10 @@ include("conexion.php");
                 </form>
                 <?php
             }
-            if(isset($_GET['confirmar'])){
-                    header("location: login.php");
-                }
+        }
+        if(isset($_GET['confirmar'])){
+            header("location: login.php");
         }
 ?>
 </body>
 </html>
-

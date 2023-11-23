@@ -1,9 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+section{
+    height: 100vh;
+    background-color: aliceblue;
 }
 
-body{
-    background-color: #0c0c0F;
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
