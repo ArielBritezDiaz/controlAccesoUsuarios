@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
 require_once('conexion.php');
+require_once('includes/functionCar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
