@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
 require_once('conexion.php');
-require_once('includes/functionCar.php');
+require_once('includes/functionCart.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,16 +18,52 @@ require_once('includes/functionCar.php');
     <title>Carrito</title>
 </head>
 <body>
+    <header>
     <?php
     include("includes/nav.php");
-
-    //Si existe el producto
-    if(isset($_GET['id_producto'])){
-        agregarProductoCarrito($_GET['id_producto']);//Primer producto
+    ?>
+    </header>
+    <section class="cart">
+    <?php
+    //Agregar producto al carrito//
+    if(isset($_GET['id_articulo'])){
+        agregarProductoCarrito($_GET['id_articulo']);//Primer producto
     }
 
+    // Vaciar carrito // 
+    if(isset($_GET['vaciar'])){
+        vaciarCarrito();
+    }
+
+    //Sumar producto//
+    if(isset($_GET['id_sumar'])){
+        sumarProducto($_GET['id_sumar']);
+    }
+
+    //Restar producto//
+    if(isset($_GET['id_restar'])){
+        restarProducto($_GET['id_restar']);
+    }
+
+    //Eliminar un producto//
+    if(isset($_GET['id_borrar'])){
+        borrarProducto($_GET['id_borrar']);
+    }
+
+    //Mostrar carrito y carrito vacio//
+    if(isset($_SESSION['carrito'])){
+        mostrarCarrito();
+    }
+    else{
+        mostrarCarritoVacio();
+    }
+    ?>
+    </section>
+    <footer>
+    <?php
     include("includes/footer.php");
     ?>
+    </footer>
 </body>
 </html>
 <?php
