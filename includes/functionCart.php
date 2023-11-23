@@ -42,14 +42,14 @@ function agregarProductoCarrito($id){
 function mostrarCarrito(){
     $carrito = $_SESSION['carrito'];
     $total = 0;
+    echo '<div class="title">
+        <p>Carrito de compras</p>
+        <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #fff;"></i></a>
+    </div>
+    <hr>';
     foreach($carrito as $index => $producto){
         echo '
             <div class="articles">
-                <div class="title">
-                    <p>Carrito de compras</p>
-                    <i class="fa-solid fa-trash-can" style="color: #0c0c0f;"></i>
-                </div>
-                <hr>
                 <p class="eliminar"><a href="cart.php?id_borrar='.$producto['id_art'].'"><i class="fa-solid fa-trash"></i></a></p>
                 <img src=src/images/articles/'.$producto['img_art'].'>
                 <p>Producto: '.$producto['nom_art'].'</p>
@@ -63,7 +63,6 @@ function mostrarCarrito(){
         <a href="inicio.php?fin_compra"
         onClick="return confirm(\'¿Desea proceder a comprar?\')" class="comprar">Finalizar Compra</a>
         <div class="link">
-        <a href="cart.php?vaciar">Vaciar Carrito</a>
         <a href="inicio.php">Seguir Comprando</a>';
 }
 
