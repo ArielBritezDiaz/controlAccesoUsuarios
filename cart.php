@@ -13,8 +13,12 @@ require_once('includes/functionCart.php');
     <link rel="stylesheet" href="styles/cart.css">
     <!-- Nav styles -->
     <link rel="stylesheet" href="styles/components/nav.css">
-    <!-- Footer styles -->
-    <link rel="stylesheet" href="styles/components/footer.css">
+
+    <!-- Nav font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+
     <title>Carrito</title>
 </head>
 <body>
@@ -59,11 +63,6 @@ require_once('includes/functionCart.php');
     }
     ?>
     </section>
-    <footer>
-    <?php
-    include("includes/footer.php");
-    ?>
-    </footer>
 </body>
 </html>
 <?php

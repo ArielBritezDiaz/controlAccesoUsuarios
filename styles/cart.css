@@ -1,10 +1,137 @@
-section{
-    height: 100vh;
-    background-color: aliceblue;
+body{
+    font-family: 'Montserrat';
+}
+
+.cart{
+    background-color: #0c0c0f;
+    padding: 30px 0;
 }
 
 .title{
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80%;
+}
+
+.title p{
+    margin: 10px;
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.title a{
+    margin: 10px;
+}
+
+.articles{
+    height: 100vh;
+    background-color: aliceblue;
+    margin: 20px auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.articles img{
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    padding: 10px 5px;
+}
+
+.article{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.add{
+    margin: 10px;
+    color: #426612;
+    padding: 5px;
+    border: 3px solid #426612;
+}
+
+.counter{
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.sub{
+    margin: 10px;
+    color: #CC0000;
+    padding: 5px; 
+    border: 3px solid #CC0000;
+}
+
+.price{
+    font-weight: 700;
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5em;
+}
+
+.subtotal{
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.subtotal::before{
+    content: "Subtotal : ";
+    font-weight: 500;
+}
+
+.eliminar{
+    color: #0c0c0f;
+    text-decoration: underline;
+}
+
+.follow{
+    color: #0c0c0f;
+    text-decoration: underline;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    background-color: aliceblue;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.total p{
+    font-weight: 700;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.total a{
+    background-color: #E01111;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.total p::before{
+    content: "Total : ";
+    font-weight: 500;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
 }

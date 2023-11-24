@@ -42,28 +42,29 @@ function agregarProductoCarrito($id){
 function mostrarCarrito(){
     $carrito = $_SESSION['carrito'];
     $total = 0;
-    echo '<div class="title">
-        <p>Carrito de compras</p>
-        <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #fff;"></i></a>
-    </div>
-    <hr>';
     foreach($carrito as $index => $producto){
-        echo '
-            <div class="articles">
-                <p class="eliminar"><a href="cart.php?id_borrar='.$producto['id_art'].'"><i class="fa-solid fa-trash"></i></a></p>
+        echo '<div class="articles">
+        <div class="title">
+        <p>Carrito de compras</p>
+        <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #0C0C0F;"></i></a>
+        </div>
                 <img src=src/images/articles/'.$producto['img_art'].'>
-                <p>Producto: '.$producto['nom_art'].'</p>
-                <p>Cantidad: <a href="cart.php?id_sumar='.$producto['id_art'].'">+</a>'.$producto['cantidad'].'<a href="cart.php?id_restar='.$producto['id_art'].'">-</a></p>
-                <p>Precio: '.number_format($producto['precio'], 2, ',' , '.').'</p>
-                <p class="SubTotal">Subtotal: '.number_format($producto['cantidad'] * $producto['precio'], 2, ',','.').'</p>
+                <p class="article">'.$producto['nom_art'].'</p>
+                <p class="counter"><a href="cart.php?id_sumar='.$producto['id_art'].'" class="add">+</a>'.$producto['cantidad'].'<a href="cart.php?id_restar='.$producto['id_art'].'" class="sub">-</a></p>
+                <p class="price">$'.number_format($producto['precio'], 2, ',' , '.').'</p>
+                <p class="subtotal">$'.number_format($producto['cantidad'] * $producto['precio'], 2, ',','.').'</p>
+                <div class="footer">
+                <a href="cart.php?id_borrar='.$producto['id_art'].'" class="eliminar">Eliminar</a>
+                <a href="inicio.php" class="follow">Seguir Comprando</a>
+                </div>
             </div>';
             $total = $total + $producto['cantidad'] * $producto['precio'];
     }
-    echo '<p class="total">Total: $'.number_format($total, 2, ',', '.').'</p>
-        <a href="inicio.php?fin_compra"
-        onClick="return confirm(\'¿Desea proceder a comprar?\')" class="comprar">Finalizar Compra</a>
-        <div class="link">
-        <a href="inicio.php">Seguir Comprando</a>';
+    echo '<div class="total">
+            <p>$'.number_format($total, 2, ',', '.').'</p>
+            <a href="inicio.php?fin_compra"
+            onClick="return confirm(\'¿Desea proceder a comprar?\')" class="comprar">Finalizar Compra</a>
+        </div>';
 }
 
 //Mostrar carrito vacio//
