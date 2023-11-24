@@ -34,15 +34,15 @@ require_once("includes/showArticles.php");
     <section class="categories" id="categories">
         <article class="cars">
             <p class="autos">ars</p>
-            <a href="#"><img src="src/images/categories/cars.png"></a>
+            <a href="inicio.php?categoria=Auto"><img src="src/images/categories/cars.png"></a>
         </article>
         <article class="motorbike">
             <p class="motos">otorbike</p>
-            <a href="#"><img src="src/images/categories/motorbike.png"></a>
+            <a href="inicio.php?categoria=Moto"><img src="src/images/categories/motorbike.png"></a>
             </article>
         <article class="formula">
             <p class="form">ormula</p>
-            <a href="#"><img src="src/images/categories/formula.png"></a>
+            <a href="inicio.php?categoria=Formula"><img src="src/images/categories/formula.png"></a>
         </article>
     </section>
     <p class="featured">Articulos destacados</p>
@@ -56,11 +56,27 @@ require_once("includes/showArticles.php");
             <input type="text" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="busqueda($('#search').val());">
             <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
         </div>
-        <!-- Ordenar articulos -->
-        <a href="inicio.php?asc"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
-        <a href="inicio.php?desc"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>
-        <!-- Boton de cancelar ordenamiento -->
         <?php
+        // <!-- Ordenar articulos -->
+        if(!isset($_GET['categoria'])){
+            echo '
+            <a href="inicio.php?asc"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
+            <a href="inicio.php?desc"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>';
+        }
+
+        // <!-- Ordenar articulos por categoria -->
+        if(isset($_GET['categoria'])){
+            $categoria = $_GET['categoria'];
+            echo '
+            <a href="inicio.php?categoria='.$categoria.'&ascat"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
+            <a href="inicio.php?categoria='.$categoria.'&descat"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>
+            <a href="inicio.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            if(isset($_GET['cancel'])){
+                header("location : inicio.php");
+                exit();
+            }
+        }
+        // <!-- Boton de cancelar ordenamiento -->
         if(isset($_GET['asc']) || isset($_GET['desc'])){
             echo '<a href="inicio.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
             if(isset($_GET['cancel'])){
@@ -72,10 +88,11 @@ require_once("includes/showArticles.php");
         </div>
             <!-- Sin ordenamientos -->
             <?php
-            if (!isset($_GET['asc']) && !isset($_GET['desc'])) {
+            if (!isset($_GET['asc']) && !isset($_GET['desc']) && !isset($_GET['categoria'])) {
                 echo '<div id="datos_buscador">
                 </div>';
             }
+
             // Ascendente
             if(isset($_GET['asc'])){
             echo '<div class="datos_ordenados">';
@@ -89,6 +106,21 @@ require_once("includes/showArticles.php");
             orderDesc();
             echo'
             </div>';
+            }
+            //Filtro por categoria
+            if(isset($_GET['categoria'])) {
+                $categoria = $_GET['categoria'];
+                echo '<div class="datos_ordenados">';
+                if(isset($_GET['ascat'])){
+                    orderAscCategorie($categoria);
+                } elseif(isset($_GET['descat'])){
+                    orderDescCategorie($categoria);
+                } else {
+                    showCategorie($categoria);
+                }
+            echo'
+            </div>';
+                
             }
             ?>
 
