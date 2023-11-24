@@ -60,7 +60,12 @@ include("conexion.php");
             echo '<form action="" method="POST">
             <input type="text" placeholder='.$_SESSION['usuario'].' pattern=".{8,}" min="8" required name="usuario" class="editUser">
             <input type="submit" value="Actualizar nombre" name="actualizar" style="cursor:pointer" class="sendUser">
-            </form>';
+            </form>
+            <a href="perfil.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            if(isset($_GET['cancel'])){
+                header('Location: perfil.php');
+            exit();
+            }
         }else{
         echo '<p class="userName">'.$_SESSION['usuario'].'</p>';
         echo '<a href="perfil.php?edit"><img src="src/images/pencil.svg" class="pencil" title="Editar nombre"></a>
