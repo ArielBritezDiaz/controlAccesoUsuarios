@@ -1,9 +1,45 @@
 body{
     font-family: 'Montserrat';
+    background-color: aliceblue;
+}
+
+.carritoVacio{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.txt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.carrito{
+    width: 200px;
+    height: 200px;
+}
+
+.carritoVacio p{
+    color: #0c0c0f;
+    font-size: 1.5em;
+}
+
+.carritoVacio p::after{
+    content: " vacío";
+    font-weight: 800;
+}
+
+.carritoVacio a{
+    color: #E01111;
+    text-decoration: underline;
+    font-size: 1.5em;
+    margin-left: 10px;
 }
 
 .cart{
-    background-color: #0c0c0f;
+    background-color: aliceblue;
     padding: 30px 0;
 }
 
