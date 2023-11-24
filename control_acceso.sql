@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2023 a las 23:22:15
+-- Tiempo de generación: 24-11-2023 a las 23:05:05
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -33,8 +33,20 @@ CREATE TABLE `articulos` (
   `descripcion` varchar(100) DEFAULT NULL,
   `precio` decimal(12,2) NOT NULL,
   `stock` int(6) NOT NULL,
-  `imagen` varchar(200) NOT NULL
+  `imagen` varchar(200) NOT NULL,
+  `categoria` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `articulos`
+--
+
+INSERT INTO `articulos` (`id_articulo`, `nombre`, `descripcion`, `precio`, `stock`, `imagen`, `categoria`) VALUES
+(1, 'hot wheels', '5 autos de hot wheels en caja nueva', 1200.00, 2, '1699313553_artcicle.jpg', 'Auto'),
+(2, 'Hot wheels big collection', 'Amazing hot wheels collection with 60 cars ', 78000.00, 1, '1699313671_artcicle.jpg', 'Auto'),
+(4, 'Formula 1 malboro', '--------', 234567.00, 3, '1699314118_artcicle.jpg', 'Formula'),
+(5, 'Formula 1 black', 'Unique f1 car black', 5600.00, 5, '1699314153_artcicle.jpg', 'Formula'),
+(8, 'Ferrari racing car scale', ' there are only 4 items in the whole world', 3245.00, 12, '1699314350_artcicle.jpg', 'Formula');
 
 -- --------------------------------------------------------
 
@@ -80,11 +92,11 @@ INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Pass_u`, `email_u`, `token_u`) VALUES
 (23, 'dassdasddadadas', '$2y$10$lN83.ldwtz4vK8oKFtpUze4PdoexXpHMMkn79AJp6vjwASKBqzm4y', 'migatten897@gmail.com', 1),
 (24, 'mariasdaddsad', '$2y$10$/Hmbs9tPU0h1.20o7ipZceWbkV7n.eyng9pxkUpq/ab3ITbP7oQeS', 'migatten879@gmail.com', 1),
 (25, 'mariasdaddsad', '$2y$10$V8DYD6pNGug6Zj4x9ZaEqe.04JuKbdnA1kYdHyaS28YjBQTLuDv1q', 'aaron.avila@tecnica7.edu.ar', 1),
-(26, 'helloworld', '$2y$10$omSq47ndjVXfSWxjeVnvP.EktenIhF5Ycws1HV4XmIuVr4b3mv5Sm', 'cmftresd@gmail.com', 1),
 (27, 'mariano7', '$2y$10$HvkMJs8/qjovz2axkZb38.Ewm8Og.sGQwsYBJhYxIGM/V6yIYAMhC', 'rosita.melanito@gmail.com', 1),
 (28, 'mariano7', '$2y$10$LOA1b4eMHorKSkpLTuJKjODTNQFiDhQtiiCW8d9DeWbM85OUytqMi', 'rosita.melanito36@gmail.com', 1),
 (29, 'alanzelada12', '$2y$10$iYSjEsafX6RDwNlRhI1cjOKanF4s0lkXPq/EHZ5sJqEbBaShMi9qS', 'alanzelada9@gmail.com', 1),
-(30, 'daasdadaddsad', '$2y$10$vzjB1k71WA9Rpx7OTbE3COesWSW.Kstkuw7nkPfxwxOtwkEMsyVQG', 'adasdasdd@dadasdasd.com', 1);
+(30, 'daasdadaddsad', '$2y$10$vzjB1k71WA9Rpx7OTbE3COesWSW.Kstkuw7nkPfxwxOtwkEMsyVQG', 'adasdasdd@dadasdasd.com', 1),
+(38, 'siiiiiiiiiiiii', '$2y$10$nh12PAHqXGP2nC6Bjc1rKOWU2lEz83DPa9CTVWhkDZ.ZCaotY5Xj2', 'cmftresd@gmail.com', 1);
 
 --
 -- Índices para tablas volcadas
@@ -110,13 +122,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
