@@ -27,7 +27,7 @@ require_once('includes/functionCart.php');
     include("includes/nav.php");
     ?>
     </header>
-    <section class="cart">
+    <section>
     <?php
     //Agregar producto al carrito//
     if(isset($_GET['id_articulo'])){
