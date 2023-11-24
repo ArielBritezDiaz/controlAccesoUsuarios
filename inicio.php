@@ -49,16 +49,48 @@ require_once("includes/showArticles.php");
     <hr>
 
     <!-- Articles section -->
-    <section class="articles">
+    <section class="articles" id="stay">
 
         <div class="con">
         <div class="input-container">
             <input type="text" name="busqueda" class="search" id="search" placeholder="Buscar producto" onkeyup="busqueda($('#search').val());">
             <i class="fa-solid fa-magnifying-glass" style="color: #f0f8ff;"></i>
         </div>
+        <!-- Ordenar articulos -->
+        <a href="inicio.php?asc"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
+        <a href="inicio.php?desc"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>
+        <!-- Boton de cancelar ordenamiento -->
+        <?php
+        if(isset($_GET['asc']) || isset($_GET['desc'])){
+            echo '<a href="inicio.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            if(isset($_GET['cancel'])){
+                header("location : inicio.php");
+                exit();
+            }
+        }
+        ?>
         </div>
-
-        <div id="datos_buscador"></div>
+            <!-- Sin ordenamientos -->
+            <?php
+            if (!isset($_GET['asc']) && !isset($_GET['desc'])) {
+                echo '<div id="datos_buscador">
+                </div>';
+            }
+            // Ascendente
+            if(isset($_GET['asc'])){
+            echo '<div class="datos_ordenados">';
+            orderAsc();
+            echo'
+            </div>';
+            }
+            // Descendente
+            if(isset($_GET['desc'])){
+            echo '<div class="datos_ordenados">';
+            orderDesc();
+            echo'
+            </div>';
+            }
+            ?>
 
     </section>
     
