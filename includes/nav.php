@@ -29,7 +29,7 @@ $current_url = $_SERVER['REQUEST_URI'];
             echo '<li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>';
             //Perfil
             echo '<li>
-            <a href="perfil.php"><i class="fa-solid fa-user" style="color: #f0f8ff;"></i>' .$_SESSION['usuario'].'</a>
+            <a href="perfil.php"><i class="fa-solid fa-user" style="color: #f0f8ff;"></i> '.$_SESSION['usuario'].'</a>
             </li>';
             //Carrito de compras
             echo '<li>
