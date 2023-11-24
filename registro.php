@@ -79,6 +79,7 @@ if(isset($_GET['send'])){
             $sql3 = "UPDATE usuarios SET token_u = 1 WHERE token_u = '$token2'";
             $consultaValidacion = mysqli_query($conexion, $sql3) ? print('Usuario validado, ya puede iniciar sesion') : print('Token invalido, el token no existe');
             $_SESSION['usuario'] = $registro['Nbr_u'];
+            $_SESSION['ID_u'] = $registro['ID_u'];
             header('location:inicio.php');
         }
         else{

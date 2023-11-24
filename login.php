@@ -59,6 +59,7 @@ if(isset($_POST['envio'])){
         $registro = mysqli_fetch_assoc($consulta);
         if(password_verify($contrasenia, $registro['Pass_u'])){
             $_SESSION['usuario'] = $usuario;
+            $_SESSION['ID_u'] = $registro['ID_u'];
             header('location:inicio.php');
         }
         else{

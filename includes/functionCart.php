@@ -73,7 +73,7 @@ function mostrarCarritoVacio(){
         <img class="carrito" src="src/images/cart.svg">
         <div class="txt">
         <p>El carrito de compras esta</p>
-        <a href="inicio.php">Ir a tienda</a>
+        <a href="inicio.php">Ir a la tienda</a>
         </div>
         </div>';
 }
