@@ -16,6 +16,20 @@ body{
     border-radius: 100%;
 }
 
+.send{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid aliceblue;
+    background-color: #cc0000;
+    color: aliceblue;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .edit{
     display: flex;
     justify-content: center;
@@ -30,6 +44,39 @@ body{
     font-weight: 600;
     font-family: 'Montserrat';
     margin: 10px;
+}
+
+.editUser{
+    overflow: hidden;
+    margin: 20px 10px;
+    outline: 0;
+    border: none;
+    background-color: #0c0c0F;
+    border-bottom: 4px solid #E01111;
+    color: aliceblue;
+    padding: 10px 0;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Montserrat';
+}
+
+.editUser::placeholder{
+    color: aliceblue;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.sendUser{
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid aliceblue;
+    background-color: #cc0000;
+    color: aliceblue;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    cursor: pointer;
 }
 
 ::selection{

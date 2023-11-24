@@ -59,11 +59,11 @@ include("conexion.php");
 
             echo '<form action="" method="POST">
             <input type="text" placeholder='.$_SESSION['usuario'].' pattern=".{8,}" min="8" required name="usuario" class="editUser">
-            <input type="submit" value="Actualizar nombre" name="actualizar" style="cursor:pointer">
+            <input type="submit" value="Actualizar nombre" name="actualizar" style="cursor:pointer" class="sendUser">
             </form>';
         }else{
         echo '<p class="userName">'.$_SESSION['usuario'].'</p>';
-        echo '<a href="perfil.php?edit"><img src="src/images/pencil.svg" class="pencil"></a>
+        echo '<a href="perfil.php?edit"><img src="src/images/pencil.svg" class="pencil" title="Editar nombre"></a>
         </div>';
         }
 
