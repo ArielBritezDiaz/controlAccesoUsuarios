@@ -42,26 +42,30 @@ function agregarProductoCarrito($id){
 function mostrarCarrito(){
     $carrito = $_SESSION['carrito'];
     $total = 0;
+    echo '<div class="title">
+    <p>Carrito de compras</p>
+    <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #0C0C0F;"></i></a>
+    </div>
+    <hr class="divisorItem">';
     foreach($carrito as $index => $producto){
         echo '<div class="articles">
-        <div class="title">
-        <p>Carrito de compras</p>
-        <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #0C0C0F;"></i></a>
-        </div>
                 <img src=src/images/articles/'.$producto['img_art'].'>
                 <p class="article">'.$producto['nom_art'].'</p>
                 <p class="counter"><a href="cart.php?id_sumar='.$producto['id_art'].'" class="add">+</a>'.$producto['cantidad'].'<a href="cart.php?id_restar='.$producto['id_art'].'" class="sub">-</a></p>
                 <p class="price">$'.number_format($producto['precio'], 2, ',' , '.').'</p>
+                <hr class="divisorPrice">
                 <p class="subtotal">$'.number_format($producto['cantidad'] * $producto['precio'], 2, ',','.').'</p>
                 <div class="footer">
                 <a href="cart.php?id_borrar='.$producto['id_art'].'" class="eliminar">Eliminar</a>
                 <a href="inicio.php" class="follow">Seguir Comprando</a>
                 </div>
-            </div>';
+            </div>
+            <hr class="divisorItem">';
             $total = $total + $producto['cantidad'] * $producto['precio'];
     }
     echo '<div class="total">
             <p>$'.number_format($total, 2, ',', '.').'</p>
+            <hr>
             <a href="inicio.php?fin_compra"
             onClick="return confirm(\'¿Desea proceder a comprar?\')" class="comprar">Finalizar Compra</a>
         </div>';

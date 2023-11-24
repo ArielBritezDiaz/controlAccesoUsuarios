@@ -26,30 +26,30 @@ $current_url = $_SERVER['REQUEST_URI'];
         <?php
         if(isset($_SESSION['usuario'])){
             //Inicio
-            echo '<li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i>Inicio</a></li>';
+            echo '<li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>';
             //Perfil
             echo '<li>
-            <a href="perfil.php"><i class="fa-solid fa-user" style="color: #f0f8ff;"></i>'.$_SESSION['usuario'].'</a>
+            <a href="perfil.php"><i class="fa-solid fa-user" style="color: #f0f8ff;"></i> '.$_SESSION['usuario'].'</a>
             </li>';
             //Carrito de compras
             echo '<li>
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Carrito</a>
+            <a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i> Carrito</a>
             </li>';
             //Publicar
-            echo '<li><a href="publicar.php"><i class="fa-solid fa-cloud-arrow-up" style="color: #f0f8ff;"></i>Publicar</a></li>';
+            echo '<li><a href="publicar.php"><i class="fa-solid fa-cloud-arrow-up" style="color: #f0f8ff;"></i> Publicar</a></li>';
             //Salir
-            echo '<li><a href="logout.php"><i class="fa-solid fa-right-from-bracket" style="color: #f0f8ff;"></i>Salir</a></li>';
+            echo '<li><a href="logout.php"><i class="fa-solid fa-right-from-bracket" style="color: #f0f8ff;"></i> Salir</a></li>';
         }else{
             //Inicio
-            echo '<li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i>Inicio</a></li>';
+            echo '<li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>';
             //Carrito de compras
             echo '<li>
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Carrito</a>
+            <a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i> Carrito</a>
             </li>';
             //Registrar
-            echo '<li><a href="form_registro.html"><i class="fa-solid fa-user-plus" style="color: #f0f8ff;"></i>Registrarse</a></li>';
+            echo '<li><a href="form_registro.html"><i class="fa-solid fa-user-plus" style="color: #f0f8ff;"></i> Registrarse</a></li>';
             //Ingresar
-            echo '<li><a href="login.php"><i class="fa-solid fa-door-open" style="color: #f0f8ff;"></i>Ingresar</a></li>';
+            echo '<li><a href="login.php"><i class="fa-solid fa-door-open" style="color: #f0f8ff;"></i> Ingresar</a></li>';
             session_destroy();
         }
         ?>
