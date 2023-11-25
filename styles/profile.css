@@ -21,13 +21,20 @@ body{
     margin: 20px auto;
     padding: 10px 20px;
     border-radius: 25px;
-    border: 1px solid aliceblue;
+    border: 3px double aliceblue;
     background-color: #cc0000;
     color: aliceblue;
     font-size: 1em;
     font-family: 'Montserrat';
     font-weight: 600;
     cursor: pointer;
+    transition: 0.8s all ease-in;
+}
+
+.send:hover{
+    border: 3px double #cc0000;
+    background-color: aliceblue;
+    color: #cc0000;
 }
 
 .edit{
