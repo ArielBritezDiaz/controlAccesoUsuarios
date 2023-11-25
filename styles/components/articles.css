@@ -59,7 +59,7 @@ body{
 .input-container i {
     position: absolute;
     right: 15px;
-    top: 30%;
+    top: 28%;
     padding: 0 10px;
     border-left: 3px solid aliceblue;
 }
@@ -131,6 +131,27 @@ body{
 
 .card:hover{
     box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,.3);
+}
+
+/* Sort articles styles */
+
+.sort-up{
+    margin: 5px 0;
+    rotate: calc(180deg);
+    height: 40px;
+    width: 40px;
+}
+
+.sort-down{
+    margin: 5px 0;
+    height: 40px;
+    width: 40px;
+}
+
+.mark{
+    margin: 5px 0;
+    height: 40px;
+    width: 40px;
 }
 
 ::selection{

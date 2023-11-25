@@ -17,6 +17,9 @@ require_once("includes/showArticles.php");
     <!-- Footer styles -->
     <link rel="stylesheet" href="styles/components/footer.css">
 
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
     <!-- Searcher cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Inicio</title>
@@ -59,18 +62,19 @@ require_once("includes/showArticles.php");
         <?php
         // <!-- Ordenar articulos -->
         if(!isset($_GET['categoria'])){
-            echo '
-            <a href="inicio.php?asc"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
-            <a href="inicio.php?desc"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>';
+            echo '<div class="sortlist">
+            <a href="inicio.php?asc"><img src="src/images/sort-up.svg" class="sort-up" title="ordenar ascendente"></a>
+            <a href="inicio.php?desc"><img src="src/images/sort-down.svg" class="sort-down" title="ordenar descendente"></a>
+            </div>';
         }
 
         // <!-- Ordenar articulos por categoria -->
         if(isset($_GET['categoria'])){
             $categoria = $_GET['categoria'];
             echo '
-            <a href="inicio.php?categoria='.$categoria.'&ascat"><i class="fa-solid fa-sort-down fa-flip-vertical" style="color: #f0f8ff;"></i></a>
-            <a href="inicio.php?categoria='.$categoria.'&descat"><i class="fa-solid fa-sort-down" style="color: #f0f8ff;"></i></a>
-            <a href="inicio.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            <a href="inicio.php?categoria='.$categoria.'&ascat"><img src="src/images/sort-up.svg" class="sort-up" title="ordenar ascendente"></a>
+            <a href="inicio.php?categoria='.$categoria.'&descat"><img src="src/images/sort-down.svg" class="sort-down" title="ordenar descendente"></a>
+            <a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>';
             if(isset($_GET['cancel'])){
                 header("location : inicio.php");
                 exit();
@@ -78,7 +82,8 @@ require_once("includes/showArticles.php");
         }
         // <!-- Boton de cancelar ordenamiento -->
         if(isset($_GET['asc']) || isset($_GET['desc'])){
-            echo '<a href="inicio.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            echo '<a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>
+            </ul>';
             if(isset($_GET['cancel'])){
                 header("location : inicio.php");
                 exit();
