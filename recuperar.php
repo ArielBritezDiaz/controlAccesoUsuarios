@@ -33,7 +33,7 @@ include("conexion.php");
         <label for="">Recuperar contraseña</label>
         <div class="inputs">
             <div class="input-container">
-                <input type="email" name="email" placeholder="Email" required class="email">
+                <input type="email" name="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minlength="2" title="Ingrese un email valido" required class="email">
                 <i class="fa-solid fa-envelope" style="color: #cc0000;"></i>
             </div>
             <input type="submit" name="recuperar" value="Recuperar" class="send">

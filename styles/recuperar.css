@@ -37,7 +37,7 @@ label{
 .input-container i {
     position: absolute;
     top:40%;
-    left: 30px;
+    left: 90px;
 }
 
 .input-container input {
@@ -49,6 +49,7 @@ label{
     border: 4px #cc0000 solid;
     outline: 0;
     font-family: 'Open Sans', sans-serif;
+    transition: 1s all ease-in-out;
 }
 
 .send{
@@ -87,6 +88,10 @@ input:valid + i{
 
 input:focus::placeholder {
     color: transparent;
+}
+
+input:valid{
+    border-color: #25ee0a;
 }
 
 *::selection{

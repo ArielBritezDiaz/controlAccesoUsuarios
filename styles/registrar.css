@@ -68,6 +68,7 @@
     border: 4px #cc0000 solid;
     outline: 0;
     font-family: 'Open Sans', sans-serif;
+    transition: 1s all ease-in-out;
 }
 
 .enviar{
@@ -94,28 +95,21 @@ input::placeholder{
     font-family: 'Open sans';
 }
 
-input:focus + i{
+input:focus + i, input:valid + i{
     display: none;
     color: transparent;
 }
 
-input:valid + i{
-    display: none;
-    border-color: #008208;
-    animation: valid 0.5s normal;
-}
-
-@keyframes valid {
-    0%{
-        border-color: #cc0000;
-    }
-    100%{
-        border-color: #008208;
-    }
+input:valid{
+    border-color: #25ee0a;
 }
 
 input:focus::placeholder {
     color: transparent;
+}
+
+input:invalid + i::before{
+    color:#cc0000
 }
 
 *::selection{

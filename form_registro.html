@@ -29,15 +29,15 @@
             <p class="title">Crear cuenta</p>
             <form action="registro.php" method="POST" class="formu">
                 <div class="input-container">
-                    <input type="text" name="usuario" placeholder="Usuario" pattern=".{8,}" min="8" required>
+                    <input type="text" name="usuario" placeholder="Nombre de usuario" pattern=".{8,}" minlength="8" title="El nombre debe tener al menos 8 caracteres" required>
                     <i class="fa-solid fa-user" style="color: #cc0000;"></i>
                 </div>
                 <div class="input-container">
-                    <input type="password" name="contrasenia" placeholder="Contraseña" pattern=".{8,}" min="8" required>
+                    <input type="password" name="contrasenia" placeholder="Contraseña" pattern=".{8,}" minlength="8" title="La contraseña debe tener al menos 8 caracteres" required>
                     <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
                 </div>
                 <div class="input-container">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minlength="2" title="Ingrese un email valido" required>
                     <i class="fa-solid fa-envelope" style="color: #cc0000;"></i>
                 </div>
                 <input type="submit" name="registrar" value="Registrar" class="enviar">
