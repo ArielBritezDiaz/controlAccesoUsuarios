@@ -26,7 +26,10 @@ include("conexion.php");
     ?>
     <section>
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="file" name="imagen" accept="image/*" id="1" style="display:none" required>
+        <label for="imagen">
+            <img src="src/images/defaultCar.png" id="previewImage" class="picture" title="Actualizar foto" style="cursor:pointer">
+        </label>
+        <input type="file" name="imagen" id="imagen" accept="image/*" id="1" style="display:none" required>
         <label for="1">
             <?php
             if(isset($_POST['upload'])){
@@ -35,10 +38,7 @@ include("conexion.php");
                     $dir_temporal = $_FILES['imagen']['tmp_name'];
                     $nbr_image = time().'_picture.jpg';
                     $upload = move_uploaded_file($dir_temporal,'src/images/pictures/'.$nbr_image);
-                    echo '<img src="src/images/pictures/'.$nbr_image.'" class="picture">';
                 }
-            }else{
-                echo '<img src="src/images/defaultCar.png" class="picture" title="Actualizar foto" style="cursor:pointer">';
             }
             ?>    
     </label>
@@ -92,5 +92,7 @@ include("conexion.php");
     <?php
     include("includes/footer.php");
     ?>
+    <!-- Preview image js -->
+    <script src="js/previewImage.js"></script>
 </body>
 </html>
