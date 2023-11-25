@@ -1,74 +1,198 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    background-color: #641414;
 }
 
-body{
-    background-color: #0c0c0F;
+.title{
+    color: aliceblue;
+    margin: 20px;
+}
+
+.title hr{
+    padding: 1px;
+    color: aliceblue;
+    background-color: aliceblue;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.titleTxt{
+    margin: 10px;
+    text-align: center;
+    font-family: 'Jura';
+    font-size: 1.8em;
+}
+
+.titleTxt::after{
+    content: "artículo";
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.titleTxt::before{
+    content: "Publicación";
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container .left input, .container .left textarea{
+    font-family: 'Montserrat';
+    display: block;
+}
+
+.name{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+    width: 300px;
+    margin: 30px 0;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+}
+
+.name::placeholder{
+    color: aliceblue;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.description{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+    width: 300px;
+    margin: 30px 0;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+    resize: none;
+}
+
+.description::placeholder{
+    color: aliceblue;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.price{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+    width: 200px;
+    margin: 30px auto;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+}
+
+.price::placeholder{
+    color: aliceblue;
+    padding: 0 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Hide inner and outer spin btn */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.stock{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+    width: 200px;
+    margin: 30px auto;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+}
+
+.stock::placeholder{
+    color: aliceblue;
+    padding: 0 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container .right label, .container .right select, .container .right input{
+    display: block;
     font-family: 'Montserrat';
 }
 
-.article{
-    padding: 20px 0;
-}
-
-input{
-    display: block;
-    margin: 10px auto;
-    width: 400px;
-    padding: 10px 5px;
-    border-radius: 10px;
-    outline: none;
-    border: #E01111 4px solid;
+.selects{
     background-color: transparent;
-    color: aliceblue;
-}
-
-input[type="number"]{
-    width: 200px;
-    background-color: #E01111;
-    color: aliceblue;
-    border-radius: 50px;
-}
-
-input[type="submit"]{
-    border: #641414 4px solid;
-    width: 200px;
-    background-color: #641414;
-    color: aliceblue;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-/* Hide the increase and decrease button */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button{
-    appearance: none;
-}
-
-label{
-    display: block;
-    margin: 10px;
-    text-align: center;
-    color: aliceblue;
-    font-size: 1.1em;
-}
-
-::placeholder{
-    color: aliceblue;
-    font-size: 1.2em;
-    padding: 3px 10px;
-}
-
-.foto{
-    height: 300px;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
     width: 300px;
-    border-radius: 10px;
+    margin: 30px 0;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+    resize: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-::selection{
-    color: wheat;
+.selects option{
+    background-color: #641414;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+    width: 300px;
+    margin: 30px 0;
+    padding: 5px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+    resize: none;
+    cursor: pointer;
+}
+
+.upload{
+    display: block;
+    margin: 30px auto;
+}
+
+.publish{
+    font-family: 'Montserrat';
+    display: block;
+    text-align: center;
     background-color: #cc0000;
+    border-radius: 50px;
+    border: 3px double aliceblue;
+    width: 200px;
+    margin: 30px auto;
+    padding: 10px;
+    color: aliceblue;
+    font-size: 1em;
+    outline: 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.8s all ease-in;
+}
+
+.publish:hover{
+    background-color: aliceblue;
+    color: #cc0000;
+    border-color: #cc0000;
+}
+
+#previewImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    border: 3px solid aliceblue;
 }
