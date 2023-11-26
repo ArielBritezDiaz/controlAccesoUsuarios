@@ -4,18 +4,27 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .title{
     color: #cc0000;
     font-family: 'Roboto';
     font-size: 3em;
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 10px;
 }
 
 .title::before{
     content: "¡";
+    font-weight: bold;
 }
 
 .title::after{
     content: "!";
+    font-weight: bold;
 }
