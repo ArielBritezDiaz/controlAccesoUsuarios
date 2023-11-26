@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("conexion.php");
+require_once("includes/showArticles.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,6 +87,8 @@ include("conexion.php");
             }
         }
     }
+    echo '<p class="published">Articulos publicados</p>';
+    showPublishing($_SESSION['ID_u']);
     ?>
 
     </section>

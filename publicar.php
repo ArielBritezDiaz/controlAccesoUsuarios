@@ -4,6 +4,7 @@ include("conexion.php");
 
 if(isset($_POST['publicar'])){
     // Datos traidos del formulario //
+    $id_u = $_SESSION['ID_u'];
     $nombre = $_POST['articulo'];
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
@@ -20,7 +21,7 @@ if(isset($_POST['publicar'])){
     }
 
     // Insertar articulo con los datos del formulario //
-    $insert = "INSERT INTO articulos(nombre, descripcion, precio, stock, imagen, categoria, color, estado) VALUES ('$nombre', '$descripcion', '$precio', '$stock', '$nbr_image', '$categoria', '$color', '$estado')";
+    $insert = "INSERT INTO articulos(nombre, descripcion, precio, stock, imagen, categoria, color, estado, id_usuario) VALUES ('$nombre', '$descripcion', '$precio', '$stock', '$nbr_image', '$categoria', '$color', '$estado', '$id_u')";
 
     $query = mysqli_query($conexion, $insert);
 

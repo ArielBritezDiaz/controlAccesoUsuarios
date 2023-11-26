@@ -135,6 +135,61 @@
             echo '<p>No hay stock de articulos con la categoria <span  class="bold">'.$cat.'</span></p>';
         }
     }
+
+    function showPublishing($id_user){
+        include("conexion.php");
+
+        $sql = "SELECT * FROM articulos WHERE id_usuario = '$id_user'";
+        $query = mysqli_query($conexion, $sql);
+
+        if(mysqli_num_rows($query)>0){
+            while($registro = mysqli_fetch_assoc($query)){
+                
+                echo '<details>
+                <summary>Articulo: '.$registro['nombre'].'</summary>';
+                
+                // Datos de los articulos publicados por el usuario
+                echo '
+                        <div class="detalle">
+                            <div class="img"><img src="src/images/articles/'.$registro['imagen'].'"></div>
+                            <div class="datos">
+                                <span>'.$registro['descripcion'].'</span>
+                                <span>'.$registro['nombre'].'</span
+                                <span> $'.$registro['precio'].'</span>
+                                <span>'.$registro['stock'].'</span>
+                                <span> '.$registro['categoria'].'</span>
+                                <span>'.$registro['color'].'</span>
+                                <span>'.$registro['estado'].'</span>
+                            </div>
+                        </div>
+                        '; 
+                /*convierto el campo Article nuevamente en un vector utilizando la funcion explode() */
+                // $articulos = explode(' ' , $registro['articles']);
+    
+                // $total = 0;
+                // for($x=1; $x<count($articulos); $x++){
+                //         /*utilizando nuevamente la funcion explote() generos las variables para guardar el id_prod, el precio y la cantidad */
+                //         list($id, $precio, $cant) = explode('/' , $articulos[$x]);
+    
+                        /*Con el $id traigo imagen y nombre de producto */
+                        // $sql2 = "SELECT Name_art, Img_art FROM articles WHERE ID_art='$id'";
+                        // $consulta2 = mysqli_query($conexion, $sql2);
+                        // $reg_art = mysqli_fetch_assoc($consulta2);
+    
+                        /* muestro detalle de pedido */
+                        
+                        // $total = $total + ($precio*$cant);     
+                }
+                // echo '
+                // <div class="total">
+                // <span> TOTAL: $'.number_format($total,2,",",".").'</span>
+                // </div>
+                // ';
+                echo '</details>';
+            }else{
+                echo '<p>No tiene articulos publicados</p>';
+            }
+        }
 ?>
 
 </body>
