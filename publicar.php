@@ -97,9 +97,9 @@ if(isset($_POST['publicar'])){
                 <!-- Categoria del articulo -->
                 <select name="categoria" class="selects">
                     <option disabled selected value="">Categoria del articulo</option>
-                    <option value="auto">Auto</option>
-                    <option value="moto">Moto</option>
-                    <option value="formula">Formula</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Formula">Formula</option>
                     <option value="varias">Varias</option>
                     <option value="ninguna">Ninguna</option>
                 </select>

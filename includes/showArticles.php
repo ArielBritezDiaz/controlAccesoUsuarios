@@ -88,7 +88,7 @@
             </div>';
         }
         if(mysqli_num_rows($query) <= 0){
-            echo '<p>No hay stock de articulos con la categoria <span>'.$cat.'</span></p>';
+            echo '<p>No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
         }
     }
 
@@ -132,7 +132,7 @@
             </div>';
         }
         if(mysqli_num_rows($query) <= 0){
-            echo '<p>No hay stock de articulos con la categoria <span>'.$cat.'</span></p>';
+            echo '<p>No hay stock de articulos con la categoria <span  class="bold">'.$cat.'</span></p>';
         }
     }
 ?>

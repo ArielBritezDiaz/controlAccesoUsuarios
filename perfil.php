@@ -42,7 +42,7 @@ include("conexion.php");
             }
             ?>    
     </label>
-        <input type="submit" name="upload" value="Actualizar foto" class="send">
+        <!-- <input type="submit" name="upload" value="Actualizar foto" class="send"> -->
     </form>
     
     <?php
