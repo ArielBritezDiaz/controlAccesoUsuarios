@@ -94,6 +94,7 @@ function existeProducto($id){
 
 //Sumar producto +//
 function sumarProducto($id){
+    echo '<script>window.location.hash = "#stay";</script>';
     $carrito = $_SESSION['carrito'];
     foreach($carrito as $indice => $producto){
         if($producto['id_art'] == $id){
@@ -107,6 +108,7 @@ function sumarProducto($id){
 
 //Restar producto -//
 function restarProducto($id){
+    echo '<script>window.location.hash = "#stay";</script>';
     $carrito = $_SESSION['carrito'];
     foreach($carrito as $indice => $producto){
         if($producto['id_art'] == $id){

@@ -38,7 +38,7 @@ require_once('includes/functionCart.php');
     if(isset($_GET['vaciar'])){
         vaciarCarrito();
     }
-
+    
     //Sumar producto//
     if(isset($_GET['id_sumar'])){
         sumarProducto($_GET['id_sumar']);
@@ -48,11 +48,13 @@ require_once('includes/functionCart.php');
     if(isset($_GET['id_restar'])){
         restarProducto($_GET['id_restar']);
     }
-
+    
     //Eliminar un producto//
+    echo '<div id="stay">';
     if(isset($_GET['id_borrar'])){
         borrarProducto($_GET['id_borrar']);
     }
+    echo '</div>';
 
     //Mostrar carrito y carrito vacio//
     if(isset($_SESSION['carrito'])){
