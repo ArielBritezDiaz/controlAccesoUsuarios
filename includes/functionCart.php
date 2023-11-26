@@ -67,7 +67,7 @@ function mostrarCarrito(){
             <p>$'.number_format($total, 2, ',', '.').'</p>
             <hr>
             <a href="inicio.php?fin_compra"
-            onClick="return confirm(\'¿Desea proceder a comprar?\')" class="comprar">Finalizar Compra</a>
+            onClick="return confirm(\'¿Seguro que desea comprar?\')" class="comprar">Finalizar Compra</a>
         </div>';
 }
 
@@ -136,6 +136,42 @@ function borrarProducto($id){
     }
     else{
         unset($_SESSION['carrito']);
+    }
+}
+
+//Finalizar la compra de productos//
+function finalizarCompra(){
+    include('conexion.php');
+    $carrito = $_SESSION['carrito'];
+    $id_user = $_SESSION['ID_u'];
+    /*Recorremos el carrito para generar el array de id_prod/precio/cant y para actualizar la disponibilidad de los productos */
+    foreach($carrito as $indice => $producto){
+        /*genero un vector $order con ID_prod/precio/cantidad separado prod a prod por un espacio en blanco*/
+        $order[] = ' '.$producto['id_art'].'/'.$producto['precio'].'/'.$producto['cantidad'];
+        /*el espacio en blanco adelante hace que $order[0] quede vacio*/
+
+        /* Actualizo la disponibilidad de cada producto */
+        $id_prod = $producto['id_art'];
+        $nuevo_stock = $producto['stock'] - $producto['cantidad'];
+        $sql_update = "UPDATE articulos SET stock = '$nuevo_stock' WHERE Id_articulo = '$id_prod'";
+        $update_stock = mysqli_query($conexion, $sql_update);
+    }
+
+    /*Asigno el valor a las variable que utilizare para grabar el registro */
+    $fecha = date("Y/m/d");
+    $productos = implode($order); //convierto el array $order en un string para guardarlo en la db
+    $id_usuario = $_SESSION['ID_u'];
+
+    /*Guardo el registro de orden el la tabal 'orders' */
+    $sql = "INSERT INTO pedidos (fecha, articulos, id_usuario) VALUES ('$fecha','$productos','$id_usuario')";
+    $insertar = mysqli_query($conexion, $sql);
+
+    /*Si se crea el registro, elimino la variable de session, con lo cual vacio el carrito y muestro mensaje */
+    if($insertar){
+        unset($_SESSION['carrito']);
+        print ('<script>alert("Pedido Generado Exitosamente")</script>');
+    }else{
+        print ('<script>alert("Error al Generar Pedido")</script>');
     }
 }
 

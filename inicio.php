@@ -2,6 +2,7 @@
 session_start();
 require_once("conexion.php");
 require_once("includes/showArticles.php");
+require_once("includes/functionCart.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +128,11 @@ require_once("includes/showArticles.php");
             </div>';
                 
             }
-            ?>
+        // Finalizar la compra de los productos en el carrito
+        if(isset($_GET['fin_compra'])){
+            finalizarCompra();
+        }
+    ?>
 
     </section>
     
