@@ -18,6 +18,16 @@ body{
     font-size: 3em;
 }
 
+.title::before{
+    content: "¡";
+    font-weight: bold;
+}
+
+.title::after{
+    content: "!";
+    font-weight: bold;
+}
+
 label{
     color: #cc0000;
     font-family: 'Roboto';
@@ -34,13 +44,41 @@ label{
     flex-direction: column;
 }
 
+/* Email input */
+
 .input-container i {
     position: absolute;
     top:40%;
-    left: 90px;
+    left: 30px;
 }
 
 .input-container input {
+    display: block;
+    margin: 10px auto;
+    width: 400px;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 4px #cc0000 solid;
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+    transition: 1s all ease-in-out;
+}
+
+/* Password input */
+
+.input-container-password {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container-password i {
+    position: absolute;
+    top:40%;
+    left: 100px;
+}
+
+.input-container-password input {
     display: block;
     margin: 10px auto;
     width: 400px;
@@ -77,21 +115,21 @@ input::placeholder{
     font-family: 'Open sans';
 }
 
-input:focus + i{
+input:focus + i, input:valid + i{
     display: none;
     color: transparent;
 }
 
-input:valid + i{
-    display: none;
+input:valid{
+    border-color: #25ee0a;
 }
 
 input:focus::placeholder {
     color: transparent;
 }
 
-input:valid{
-    border-color: #25ee0a;
+input:invalid + i::before{
+    color:#cc0000
 }
 
 *::selection{

@@ -99,8 +99,9 @@ include("conexion.php");
                 <form action="" method="GET">
                 <label for="">Ingrese su nueva contraseña</label>
                 <div class="inputs">
-                    <div class="input-container">
-                        <input type="text" name="contrasenia" placeholder="Contraseña" min="8" class="password" required>
+                    <div class="input-container-password">
+                        <input type="text" name="contrasenia" placeholder="Contraseña" pattern=".{8,}" minlength="8" title="La contraseña debe tener al menos 8 caracteres" class="password" required>
+                        <i class="fa-solid fa-lock" style="color: #cc0000;"></i>
                     </div>
                     <input type="submit" name="confirmar" value="Confirmar" class="send">
                 </div>
