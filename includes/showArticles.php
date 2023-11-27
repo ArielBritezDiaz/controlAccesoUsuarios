@@ -145,27 +145,23 @@
 
         if(mysqli_num_rows($query)>0){
             while($registro = mysqli_fetch_assoc($query)){
-                
-                echo '<details>
-                <summary>Articulo: '.$registro['nombre'].'</summary>';
+                $format = number_format($registro['precio'], 2, ',', '.');
+                echo '<details class="details">
+                <summary class="summary">'.$registro['nombre'].'</summary>';
                 
                 // Datos de los articulos publicados por el usuario
-                echo '
-                        <div class="detalle">
-                            <div class="img"><img src="src/images/articles/'.$registro['imagen'].'"></div>
-                            <div class="datos">
-                                <span>'.$registro['descripcion'].'</span>
-                                <span>'.$registro['nombre'].'</span
-                                <span> $'.$registro['precio'].'</span>
-                                <span>'.$registro['stock'].'</span>
-                                <span> '.$registro['categoria'].'</span>
-                                <span>'.$registro['color'].'</span>
-                                <span>'.$registro['estado'].'</span>
-                                <a href="perfil.php?id_eliminar_articulo='.$registro['id_articulo'].'"
-                                onClick="return confirm(\'¿Seguro que desea comprar?\')">
-                                    <img src="src/images/mark.svg">
-                                </a>
-                            </div>
+                echo '<div class="detalles">
+                            <div><img src="src/images/articles/'.$registro['imagen'].'" class="img"></div>
+                                <div class="data">
+                                    <p class="precio">'.$format.'</p>
+                                    <hr class="articleDivisor">
+                                    <p class="stock">'.$registro['stock'].'</p>
+                                </div>
+                        </div>
+                        <div class="delete">
+                            <a href="perfil.php?id_eliminar_articulo='.$registro['id_articulo'].'"
+                            onClick="return confirm(\'¿Seguro que desea comprar?\')">Eliminar
+                            </a>
                         </div>
                         '; 
                         echo '</details>';

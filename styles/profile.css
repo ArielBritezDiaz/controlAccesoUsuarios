@@ -92,6 +92,104 @@ body{
     cursor: pointer;
 }
 
+.summaryContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 40px;
+}
+
+.divisor{
+    padding: 1.5px;
+    background-color: #E01111;
+    border: #E01111;
+    margin-bottom: 15px;
+}
+
+.published{
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    color: aliceblue;
+}
+
+.summary{
+    background-color: #641414;
+    width: 400px;
+    color: aliceblue;
+    padding: 10px 15px;
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.purchases .published{
+    text-align: end;
+}
+
+.details{
+    width: 100%;
+    max-width: 400px;
+    background-color: aliceblue;
+    margin: 30px auto;
+    border-radius: 5px;
+}
+
+.detalles{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    align-items: center;
+}
+
+.img{
+    max-width: 120px;
+    height: 100px;
+    margin: 10px 20px;
+}
+
+.precio{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.precio::before{
+    content: "$ ";
+}
+
+.stock{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stock::before{
+    content: "Stock : ";
+    font-weight: 100;
+}
+
+.articleDivisor{
+    margin: 5px 0;
+    padding: 1px;
+    background-color: #0c0c0F;
+    border: #0c0c0F;
+}
+
+.data{
+    margin: 20px;
+}
+
+.details .delete{
+    display: flex;
+    justify-content: end;
+}
+
+.details a{
+    color: #0c0c0F;
+    font-family: 'Montserrat';
+    text-decoration: underline;
+    margin: 5px 10px;
+}
+
 ::selection{
     color: wheat;
     background-color: #cc0000;

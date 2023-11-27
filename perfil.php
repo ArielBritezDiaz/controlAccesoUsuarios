@@ -91,22 +91,32 @@ require_once("includes/functionCart.php");
         }
 
     }
-    echo '<p class="published">Articulos publicados</p>';
-        showPublishing($_SESSION['ID_u']);
-
-    // Editar articulo publicado desde el perfil
-    // if(isset($_GET['id_editar_articulo'])){
-    //     editArticle($_GET['id_editar_articulo']);
-    // }
-
-    // Eliminar articulo publicado desde el perfil
+    ?>
+    <div class="summaryContainer">
+        <div class="publishing">
+        <?php
+        echo '<div class="rotate">
+        <p class="published">Articulos publicados</p>
+        <hr class="divisor">
+        </div>';
+            showPublishing($_SESSION['ID_u']);
+        ?>
+    </div>
+    <?php
+    //Eliminar articulo desde el perfil
     if(isset($_GET['id_eliminar_articulo'])){
         deleteArticle($_GET['id_eliminar_articulo']);
     }
-
-    showPurchases($_SESSION['ID_u']);
-    
     ?>
+        <div class="purchases">
+        <?php
+        echo '
+        <p class="published">Mis compras</p>
+        <hr class="divisor">';
+        showPurchases($_SESSION['ID_u']);
+        ?>
+        </div>
+    </div>
 
     </section>
     <?php

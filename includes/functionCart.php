@@ -187,8 +187,8 @@ function showPurchases($ID_user){
     if(mysqli_num_rows($query)>0){
         while($registro=mysqli_fetch_assoc($query)){
             /* muestro Nro de orden y Fecha */
-            echo '<details>
-            <summary>Comprado el: '.$registro['fecha'].'</summary>';
+            echo '<details class="details">
+            <summary class="summary">Comprado el: '.$registro['fecha'].'</summary>';
             
             /*convierto el campo Article nuevamente en un vector utilizando la funcion explode() */
             $articulos = explode(' ' , $registro['articulos']);
