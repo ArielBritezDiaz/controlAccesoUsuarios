@@ -25,7 +25,9 @@
         while($registro=mysqli_fetch_assoc($query)){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
-                        <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
+                        <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                            <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                        </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
                         <p class="stock">Stock : '.$registro['stock'].'</p>
@@ -43,7 +45,9 @@
         while($registro=mysqli_fetch_assoc($query)){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
-                        <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
+                        <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                            <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                        </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
                         <p class="stock">Stock : '.$registro['stock'].'</p>
@@ -61,7 +65,9 @@
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
             echo'<div class="card">
-                    <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                        <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$article['stock'].'</p>
@@ -80,7 +86,9 @@
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
             echo'<div class="card">
-                    <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                        <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$article['stock'].'</p>
@@ -102,7 +110,9 @@
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
             echo'<div class="card">
-                    <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                        <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$article['stock'].'</p>
@@ -124,7 +134,9 @@
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
             echo'<div class="card">
-                    <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$article['id_articulo'].'">
+                        <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$article['stock'].'</p>
@@ -184,6 +196,35 @@
                 </script>';
             }
         }
+
+        // Mostrar publicacion de articulo
+        function showArticlePublished($id){
+            include ('conexion.php');
+            $sql = "SELECT * FROM articulos WHERE id_articulo = '$id'";
+            $query = mysqli_query($conexion, $sql);
+            while($registro = mysqli_fetch_assoc($query)){
+                // Obtener el nombre del usuario utilizando id_usuario
+                $id_usuario = $registro['id_usuario'];
+                $sql2 = "SELECT Nbr_u FROM usuarios WHERE ID_u = '$id_usuario'";
+                $query_fk = mysqli_query($conexion, $sql2);
+                $registro_u = mysqli_fetch_assoc($query_fk);
+
+                $format = number_format($registro['precio'], 2, ',', '.');
+                echo '
+                <div class="userName">
+                    <p class="user">Publicado por : '.$registro_u['Nbr_u'].'</p>
+                </div>
+                <img src="src/images/articles/'.$registro['imagen'].'" class="img">
+                <p class="name">'.$registro['nombre'].'</p>
+                <p class="price">$'.$format.'</p>
+                <p class="stock">'.$registro['stock'].'</p>
+                <p class="categorie">'.$registro['categoria'].'</p>
+                <p class="color">'.$registro['color'].'</p>
+                <p class="state">'.$registro['estado'].'</p>
+                <a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar al carrito</a>';
+        }
+        }
+
         // Editar publicacion
         // function editArticle($id_a){
         //     include("conexion.php");

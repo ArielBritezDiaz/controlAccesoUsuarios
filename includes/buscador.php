@@ -9,7 +9,9 @@ include('../conexion.php');
     while($registro=mysqli_fetch_assoc($consulta)){
         $format = number_format($registro['precio'], 2, ',', '.');
         echo'<div class="card">
-                    <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$registro['id_articulo'].'">
+                        <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
+                    </a>
                     <p class="name">'.$registro['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
                     <p class="stock">Stock : '.$registro['stock'].'</p>
