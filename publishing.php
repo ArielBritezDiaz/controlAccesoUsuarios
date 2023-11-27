@@ -14,6 +14,12 @@ require_once('includes/showArticles.php');
     <link rel="stylesheet" href="styles/components/nav.css">
     <!-- Footer styles -->
     <link rel="stylesheet" href="styles/components/footer.css">
+
+    <!-- Montserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+
     <title>Publicacion</title>
 </head>
 <body>

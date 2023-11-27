@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat';
+    background-color: #641414;
+}
+
+.userName{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.user{
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.user::before{
+    content: "Publicado por : ";
+    font-weight: 100;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container .imgContainer img{
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.container .imgContainer{
+    margin: 20px 25px;
+}
+
+.data{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name{
+    color: aliceblue;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+
+.price{
+    color: aliceblue;
+    font-size: 2em;
+    margin: 20px;
+    text-align: center;
+}
+
+.stock{
+    color: aliceblue;
+    font-size: 1.8em;
+    margin: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stock::before{
+    content: "Stock : ";
+    font-weight: 100;
+}
+
+.categorie{
+    color: aliceblue;
+    font-size: 1.6em;
+    margin: 20px;
+    text-align: center;
+}
+
+.color{
+    color: aliceblue;
+    font-size: 1.6em;
+    margin: 20px;
+    text-align: center;
+}
+
+.state{
+    color: aliceblue;
+    font-size: 1.6em;
+    margin: 20px;
+    text-align: center;
+}
+
+.cart{
+    background-color: #e01111;
+    text-align: center;
+    border: 3px double aliceblue;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px 30px;
+    transition: 0.8s all ease-in;
+}
+
+.cart:hover {
+    background-color: aliceblue;
+    color: #e01111;
+    border-color: #e01111;
+}
+
+.cart:hover i {
+    color: #e01111;
+}

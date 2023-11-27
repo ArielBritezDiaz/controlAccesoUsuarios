@@ -212,16 +212,22 @@
                 $format = number_format($registro['precio'], 2, ',', '.');
                 echo '
                 <div class="userName">
-                    <p class="user">Publicado por : '.$registro_u['Nbr_u'].'</p>
+                    <p class="user">'.$registro_u['Nbr_u'].'</p>
                 </div>
-                <img src="src/images/articles/'.$registro['imagen'].'" class="img">
-                <p class="name">'.$registro['nombre'].'</p>
-                <p class="price">$'.$format.'</p>
-                <p class="stock">'.$registro['stock'].'</p>
-                <p class="categorie">'.$registro['categoria'].'</p>
-                <p class="color">'.$registro['color'].'</p>
-                <p class="state">'.$registro['estado'].'</p>
-                <a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar al carrito</a>';
+                <div class="container">
+                    <div class="imgContainer">
+                        <img src="src/images/articles/'.$registro['imagen'].'" class="img">
+                    </div>
+                    <div class="data">
+                        <p class="name">'.$registro['nombre'].'</p>
+                        <p class="price">$'.$format.'</p>
+                        <p class="stock">'.$registro['stock'].'</p>
+                        <p class="categorie">Categoria : '.$registro['categoria'].'</p>
+                        <p class="color">Color : '.$registro['color'].'</p>
+                        <p class="state">Estado : '.$registro['estado'].'</p>
+                        <a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart"><i class="fa-solid fa-cart-shopping"></i> Agregar al carrito</a>
+                    </div>
+                </div>';
         }
         }
 
