@@ -154,6 +154,26 @@ body{
     width: 40px;
 }
 
+.empty{
+    font-size: 2em;
+    font-weight: 500;
+    color: aliceblue;
+}
+
+.empty::before{
+    content: "¡";
+    font-weight: bold;
+}
+
+.empty::after{
+    content: "!";
+    font-weight: bold;
+}
+
+.bold{
+    font-weight: bold;
+}
+
 ::selection{
     background-color: #641414;
     color: aliceblue;

@@ -25,8 +25,8 @@
         while($registro=mysqli_fetch_assoc($query)){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
-                        <a href="publishing.php?id_art='.$article['id_articulo'].'">
-                            <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                        <a href="publishing.php?id_art='.$registro['id_articulo'].'">
+                            <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
                         </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
@@ -45,8 +45,8 @@
         while($registro=mysqli_fetch_assoc($query)){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
-                        <a href="publishing.php?id_art='.$article['id_articulo'].'">
-                            <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                        <a href="publishing.php?id_art='.$registro['id_articulo'].'">
+                            <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
                         </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
@@ -65,8 +65,8 @@
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
             echo'<div class="card">
-                    <a href="publishing.php?id_art='.$article['id_articulo'].'">
-                        <img src="src/images/articles/'.$article['imagen'].'" class="imgArticle">
+                    <a href="publishing.php?id_art='.$registro['id_articulo'].'">
+                        <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
                     </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
@@ -96,7 +96,7 @@
             </div>';
         }
         if(mysqli_num_rows($query) <= 0){
-            echo '<p>No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
+            echo '<p class="empty">No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
         }
     }
 
@@ -120,7 +120,7 @@
             </div>';
         }
         if(mysqli_num_rows($query) <= 0){
-            echo '<p>No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
+            echo '<p class="empty">No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
         }
     }
 
@@ -144,7 +144,7 @@
             </div>';
         }
         if(mysqli_num_rows($query) <= 0){
-            echo '<p>No hay stock de articulos con la categoria <span  class="bold">'.$cat.'</span></p>';
+            echo '<p class="empty">No hay stock de articulos con la categoria <span  class="bold">'.$cat.'</span></p>';
         }
     }
 

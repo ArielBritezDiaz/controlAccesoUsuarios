@@ -66,6 +66,7 @@ if(isset($_GET['send'])){
         echo '<p class="title">Correo enviado, por favor valide</p>';
     }
     else{
+        echo '<a href="form_registro.html"><img src="src/images/backArrow.svg"></a>';
         echo '<p class="title">Error al enviar correo de validacion</p>';
     }
 }
