@@ -192,7 +192,7 @@ function showPurchases($ID_user){
             
             /*convierto el campo Article nuevamente en un vector utilizando la funcion explode() */
             $articulos = explode(' ' , $registro['articulos']);
-
+            
             $total = 0;
             for($x=1; $x<count($articulos); $x++){
                     /*utilizando nuevamente la funcion explote() generos las variables para guardar el id_prod, el precio y la cantidad */
@@ -210,7 +210,7 @@ function showPurchases($ID_user){
                             <p class="name">'.$reg_art['nombre'].'</p>
                             <img src="src/images/articles/'.$reg_art['imagen'].'" class="img">
                         </div>
-                        <div class="data>
+                        <div class="data">
                             <hr class="articleDivisor">
                             <p class="precio">'.number_format($precio,2,",",".").'</p>
                             <hr class="articleDivisor">

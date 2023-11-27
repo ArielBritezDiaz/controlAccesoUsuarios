@@ -211,8 +211,14 @@
 
                 $format = number_format($registro['precio'], 2, ',', '.');
                 echo '
-                <div class="userName">
-                    <p class="user">'.$registro_u['Nbr_u'].'</p>
+                <div class="userName">';
+                if(isset($registro['Nbr_u'])){
+                    echo '<p class="user">'.$registro_u['Nbr_u'].'</p>';
+                }else{
+                    echo '<p class="user"> - </p>';
+                }
+                    
+                echo '
                 </div>
                 <div class="container">
                     <div class="imgContainer">

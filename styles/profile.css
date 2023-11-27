@@ -34,7 +34,7 @@ body{
 .send:hover{
     border: 3px double #cc0000;
     background-color: aliceblue;
-    color: #cc0000;
+    color: #5a4b4b;
 }
 
 .edit{

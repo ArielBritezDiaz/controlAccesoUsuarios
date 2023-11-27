@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2023 a las 23:15:16
+-- Tiempo de generación: 27-11-2023 a las 23:01:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -45,11 +45,15 @@ CREATE TABLE `articulos` (
 --
 
 INSERT INTO `articulos` (`id_articulo`, `nombre`, `descripcion`, `precio`, `stock`, `imagen`, `categoria`, `color`, `estado`, `id_usuario`) VALUES
-(1, 'hot wheels', '5 autos de hot wheels en caja nueva', 1200.00, 2, '1699313553_artcicle.jpg', 'Auto', NULL, NULL, NULL),
+(1, 'hot wheels', '5 autos de hot wheels en caja nueva', 1200.00, 1, '1699313553_artcicle.jpg', 'Auto', NULL, NULL, NULL),
 (2, 'Hot wheels big collection', 'Amazing hot wheels collection with 60 cars ', 78000.00, 1, '1699313671_artcicle.jpg', 'Auto', NULL, NULL, NULL),
-(4, 'Formula 1 malboro', '--------', 234567.00, 3, '1699314118_artcicle.jpg', 'Formula', NULL, NULL, NULL),
-(5, 'Formula 1 black', 'Unique f1 car black', 5600.00, 5, '1699314153_artcicle.jpg', 'Formula', NULL, NULL, NULL),
-(8, 'Ferrari racing car scale', ' there are only 4 items in the whole world', 3245.00, 7, '1699314350_artcicle.jpg', 'Formula', NULL, NULL, NULL);
+(4, 'Formula 1 malboro', '--------', 234567.00, 1, '1699314118_artcicle.jpg', 'Formula', NULL, NULL, NULL),
+(5, 'Formula 1 black', 'Unique f1 car black', 5600.00, 3, '1699314153_artcicle.jpg', 'Formula', NULL, NULL, NULL),
+(8, 'Ferrari racing car scale', ' there are only 4 items in the whole world', 3245.00, 0, '1699314350_artcicle.jpg', 'Formula', NULL, NULL, NULL),
+(39, 'Ferrari collection', '', 450000.00, 116, '1701051828_artcicle.jpg', 'Auto', 'azul', 'nuevo', 66),
+(40, 'Big black', 'Luxury black car', 200000.00, 1, '1701051872_artcicle.jpg', 'varias', 'negro', 'nuevo', 66),
+(43, 'Hot wheels triple collection', '', 123000.00, 47, '1701105178_artcicle.jpg', 'Auto', 'azul', 'nuevo', 67),
+(44, 'Autos coleccionables', 'Los mejores autos coleccionables', 125000.00, 10, '1701109773_artcicle.jpg', 'varias', 'varios', 'usado', 67);
 
 -- --------------------------------------------------------
 
@@ -60,7 +64,7 @@ INSERT INTO `articulos` (`id_articulo`, `nombre`, `descripcion`, `precio`, `stoc
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `articulos` varchar(20) NOT NULL,
+  `articulos` text NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -69,7 +73,17 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id_pedido`, `fecha`, `articulos`, `id_usuario`) VALUES
-(1, '2023-11-26', ' 8/3245.00/5', 24);
+(2, '2023-11-27', ' 8/3245.00/3', 66),
+(3, '2023-11-27', ' 4/234567.00/1', 66),
+(4, '2023-11-27', ' 4/234567.00/1', 66),
+(5, '2023-11-27', ' 39/450000.00/3', 67),
+(6, '2023-11-27', ' 43/123000.00/3', 67),
+(7, '2023-11-27', ' 44/125000.00/2', 69),
+(9, '2023-11-27', ' 39/450000.00/1', 69),
+(10, '2023-11-27', ' 43/123000.00/3', 69),
+(11, '2023-11-27', ' 8/3245.00/1 39/4500', 69),
+(12, '2023-11-27', ' 8/3245.00/2 39/4500', 69),
+(13, '2023-11-27', ' 8/3245.00/2 39/4500', 69);
 
 -- --------------------------------------------------------
 
@@ -91,13 +105,14 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Pass_u`, `email_u`, `token_u`, `Foto_u`) VALUES
-(24, 'lionel messi', '$2y$10$/Hmbs9tPU0h1.20o7ipZceWbkV7n.eyng9pxkUpq/ab3ITbP7oQeS', 'migatten879@gmail.com', 1, ''),
 (25, 'mariasdaddsad', '$2y$10$V8DYD6pNGug6Zj4x9ZaEqe.04JuKbdnA1kYdHyaS28YjBQTLuDv1q', 'aaron.avila@tecnica7.edu.ar', 1, ''),
 (27, 'mariano7', '$2y$10$HvkMJs8/qjovz2axkZb38.Ewm8Og.sGQwsYBJhYxIGM/V6yIYAMhC', 'rosita.melanito@gmail.com', 1, ''),
 (28, 'mariano7', '$2y$10$LOA1b4eMHorKSkpLTuJKjODTNQFiDhQtiiCW8d9DeWbM85OUytqMi', 'rosita.melanito36@gmail.com', 1, ''),
 (29, 'alanzelada12', '$2y$10$iYSjEsafX6RDwNlRhI1cjOKanF4s0lkXPq/EHZ5sJqEbBaShMi9qS', 'alanzelada9@gmail.com', 1, ''),
 (30, 'daasdadaddsad', '$2y$10$vzjB1k71WA9Rpx7OTbE3COesWSW.Kstkuw7nkPfxwxOtwkEMsyVQG', 'adasdasdd@dadasdasd.com', 1, ''),
-(38, 'siiiiiiiiiiiii', '$2y$10$nh12PAHqXGP2nC6Bjc1rKOWU2lEz83DPa9CTVWhkDZ.ZCaotY5Xj2', 'cmftresd@gmail.com', 1, '');
+(66, 'Marianoooo', '$2y$10$C54ETrSyjO4UwCGb1ayvj.GZAdJXpBg.r9YcOopER7e3u7uYR2BD.', 'aguiar.mariano@tecnica7.edu.ar', 1, ''),
+(67, 'mariano78', '$2y$10$qMvHIn65mJjPawVA4pBTau2WtMSnJAxw2zvJVmRloO/D3BapymR6C', 'mariano.n.aguiar@gmail.com', 1, ''),
+(69, 'dadasdsadasdsa', '$2y$10$Pou3FSoqceOXN8Udn8yqVOE1R6frWOuxevmr1TpYzqTDwTvS3XIH2', 'cmftresd@gmail.com', 1, '');
 
 --
 -- Índices para tablas volcadas
@@ -130,19 +145,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `ID_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- Restricciones para tablas volcadas

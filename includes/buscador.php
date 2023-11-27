@@ -7,7 +7,8 @@ include('../conexion.php');
     }
     $consulta = mysqli_query($conexion, $sql);
     while($registro=mysqli_fetch_assoc($consulta)){
-        $format = number_format($registro['precio'], 2, ',', '.');
+        if($registro['stock'] > 0){
+            $format = number_format($registro['precio'], 2, ',', '.');
         echo'<div class="card">
                     <a href="publishing.php?id_art='.$registro['id_articulo'].'">
                         <img src="src/images/articles/'.$registro['imagen'].'" class="imgArticle">
@@ -17,5 +18,6 @@ include('../conexion.php');
                     <p class="stock">Stock : '.$registro['stock'].'</p>
                     <a href="cart.php?id_articulo='.$registro['id_articulo'].'"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar</a>
             </div>';
+        }
     };
 ?>
