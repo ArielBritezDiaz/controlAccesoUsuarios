@@ -62,7 +62,9 @@ require_once("includes/showArticles.php");
             <input type="text" placeholder='.$_SESSION['usuario'].' pattern=".{8,}" min="8" required name="usuario" class="editUser">
             <input type="submit" value="Actualizar nombre" name="actualizar" style="cursor:pointer" class="sendUser">
             </form>
-            <a href="perfil.php?cancel" class="cancel"><i class="fa-solid fa-xmark" style="color: #cc0000;"></i></a>';
+            <a href="perfil.php?cancel" class="cancel">
+                <img src="src/images/mark.svg">
+            </a>';
             if(isset($_GET['cancel'])){
                 header('Location: perfil.php');
             exit();
@@ -86,9 +88,20 @@ require_once("includes/showArticles.php");
             exit();
             }
         }
+
     }
     echo '<p class="published">Articulos publicados</p>';
-    showPublishing($_SESSION['ID_u']);
+        showPublishing($_SESSION['ID_u']);
+
+    // Editar articulo publicado desde el perfil
+    // if(isset($_GET['id_editar_articulo'])){
+    //     editArticle($_GET['id_editar_articulo']);
+    // }
+
+    // Eliminar articulo publicado desde el perfil
+    if(isset($_GET['id_eliminar_articulo'])){
+        deleteArticle($_GET['id_eliminar_articulo']);
+    }
     ?>
 
     </section>
