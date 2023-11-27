@@ -168,9 +168,9 @@
                             </div>
                         </div>
                         '; 
-                
+                        echo '</details>';
                 }
-                echo '</details>';
+
             }else{
                 echo '<p>No tiene articulos publicados</p>';
             }

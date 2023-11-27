@@ -177,4 +177,58 @@ function finalizarCompra(){
     }
 }
 
+//Mostrar los pedidos de un usuario
+function showPurchases($ID_user){
+    include('conexion.php');
+
+    $sql = "SELECT * FROM pedidos WHERE id_usuario = '$ID_user'";
+    $query = mysqli_query($conexion, $sql);
+
+    if(mysqli_num_rows($query)>0){
+        while($registro=mysqli_fetch_assoc($query)){
+            /* muestro Nro de orden y Fecha */
+            echo '<details>
+            <summary>Comprado el: '.$registro['fecha'].'</summary>';
+            
+            /*convierto el campo Article nuevamente en un vector utilizando la funcion explode() */
+            $articulos = explode(' ' , $registro['articulos']);
+
+            $total = 0;
+            for($x=1; $x<count($articulos); $x++){
+                    /*utilizando nuevamente la funcion explote() generos las variables para guardar el id_prod, el precio y la cantidad */
+                    list($id, $precio, $cant) = explode('/' , $articulos[$x]);
+
+                    /*Con el $id traigo imagen y nombre de producto */
+                    $sql2 = "SELECT nombre, imagen FROM articulos WHERE id_articulo = '$id'";
+                    $query2 = mysqli_query($conexion, $sql2);
+                    $reg_art = mysqli_fetch_assoc($query2);
+
+                    /* muestro detalle de pedido */
+                    echo '
+                    <div class="detalle">
+                        <div class="img"> <img src="src/images/articles/'.$reg_art['imagen'].'"></div>
+                        <div class="datos">
+                            <span>'.$reg_art['nombre'].'</span>
+                            <span> $'.number_format($precio,2,",",".").'</span>
+                            <span> Cantidad:'.$cant.'</span>
+                            <span> Subtotal: $'.number_format($precio*$cant,2,",",".").'</span>
+                        </div>
+                    </div>
+                    '; 
+                    $total = $total + ($precio*$cant);     
+            }
+            echo '
+            <div class="total">
+            <span> TOTAL: $'.number_format($total,2,",",".").'</span>
+            </div>
+            ';
+            echo '</details>';
+        
+        }
+    }else{
+        echo 'No tiene compras hechas';
+    }
+}
+
+
 ?>

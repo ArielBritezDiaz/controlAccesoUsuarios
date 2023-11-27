@@ -2,6 +2,7 @@
 session_start();
 include("conexion.php");
 require_once("includes/showArticles.php");
+require_once("includes/functionCart.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +103,9 @@ require_once("includes/showArticles.php");
     if(isset($_GET['id_eliminar_articulo'])){
         deleteArticle($_GET['id_eliminar_articulo']);
     }
+
+    showPurchases($_SESSION['ID_u']);
+    
     ?>
 
     </section>
