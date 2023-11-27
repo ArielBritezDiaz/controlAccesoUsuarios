@@ -24,6 +24,8 @@
         <li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>
         <!-- Carrito de compras -->
         <li><a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i> Carrito</a></li>
+        <!-- CMF 3D -->
+        <li><a href="https://marianojsb.github.io/cmf3d.github.io/"><img src="src/images/logo/cmf-3d/resize.svg"> Solicitar pedido</a></li>
         <?php
         if(isset($_SESSION['usuario'])){
             //Perfil
