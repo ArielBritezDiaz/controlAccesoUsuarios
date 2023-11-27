@@ -257,6 +257,17 @@ body{
     font-weight: 100;
 }
 
+.empty{
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    color: aliceblue;
+}
+
+.divisorLine{
+    background-color: aliceblue;
+    padding: 1px;
+}
+
 ::selection{
     color: wheat;
     background-color: #cc0000;

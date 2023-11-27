@@ -107,7 +107,7 @@ require_once("includes/functionCart.php");
     if(isset($_GET['id_eliminar_articulo'])){
         deleteArticle($_GET['id_eliminar_articulo']);
     }
-    ?>
+    ?>  <hr class="divisorLine">
         <div class="purchases">
         <?php
         echo '
