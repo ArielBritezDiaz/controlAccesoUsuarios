@@ -220,10 +220,57 @@
                     </div>
                     <div class="data">
                         <p class="name">'.$registro['nombre'].'</p>
+                        <p class="description">'.$registro['descripcion'].'</p>
                         <p class="price">$'.$format.'</p>
                         <p class="stock">'.$registro['stock'].'</p>
-                        <p class="categorie">Categoria : '.$registro['categoria'].'</p>
-                        <p class="color">Color : '.$registro['color'].'</p>
+                        <p class="categorie">Categoria : '.$registro['categoria'].'</p>';
+                        // SVG de color
+                        if($registro['color'] == 'azul'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/blue.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'negro'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/black.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'gris'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/gray.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'verde'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/green.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'naranja'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/orange.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'varios'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/rainbow.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'violeta'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/purple.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'rojo'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/red.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'blanco'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/white.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'amarillo'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/yellow.svg" class="colorSvg">
+                            </div>';
+                        }else if($registro['color'] == 'ninguno'){
+                            echo '<div class="colorContainer">
+                                <img src="src/images/colors/others.svg" class="colorSvg">
+                            </div>';
+                        }
+                    echo '
                         <p class="state">Estado : '.$registro['estado'].'</p>
                         <a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart"><i class="fa-solid fa-cart-shopping"></i> Agregar al carrito</a>
                     </div>
