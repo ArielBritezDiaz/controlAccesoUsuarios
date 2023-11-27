@@ -168,7 +168,7 @@
                 }
 
             }else{
-                echo '<p>No tiene articulos publicados</p>';
+                echo '<p class="empty">No tiene articulos publicados</p>';
             }
         }
 

@@ -205,28 +205,32 @@ function showPurchases($ID_user){
 
                     /* muestro detalle de pedido */
                     echo '
-                    <div class="detalle">
-                        <div class="img"> <img src="src/images/articles/'.$reg_art['imagen'].'"></div>
-                        <div class="datos">
-                            <span>'.$reg_art['nombre'].'</span>
-                            <span> $'.number_format($precio,2,",",".").'</span>
-                            <span> Cantidad:'.$cant.'</span>
-                            <span> Subtotal: $'.number_format($precio*$cant,2,",",".").'</span>
+                    <div class="detallesPurchases">
+                        <div class="nameContainer">
+                            <p class="name">'.$reg_art['nombre'].'</p>
+                            <img src="src/images/articles/'.$reg_art['imagen'].'" class="img">
+                        </div>
+                        <div class="data>
+                            <hr class="articleDivisor">
+                            <p class="precio">'.number_format($precio,2,",",".").'</p>
+                            <hr class="articleDivisor">
+                            <p class="cant">'.$cant.'</p>
+                            <hr class="articleDivisor">
+                            <p class="subtotal">'.number_format($precio*$cant,2,",",".").'</p>
                         </div>
                     </div>
                     '; 
                     $total = $total + ($precio*$cant);     
             }
-            echo '
-            <div class="total">
-            <span> TOTAL: $'.number_format($total,2,",",".").'</span>
+            echo '<div class="totalContainer">
+            <p class="total">'.number_format($total,2,",",".").'</p>
             </div>
             ';
             echo '</details>';
         
         }
     }else{
-        echo 'No tiene compras hechas';
+        echo '<p class="empty">No tiene compras hechas</p>';
     }
 }
 

@@ -113,13 +113,13 @@ body{
 
 .summary{
     background-color: #641414;
-    width: 400px;
+    width: 450px;
     color: aliceblue;
     padding: 10px 15px;
     font-family: 'Montserrat';
     font-size: 1.5em;
     cursor: pointer;
-    overflow: hidden;
+    
 }
 
 .purchases .published{
@@ -128,17 +128,19 @@ body{
 
 .details{
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     background-color: aliceblue;
     margin: 30px auto;
     border-radius: 5px;
 }
 
+/* Articles summary */
 .detalles{
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat';
     align-items: center;
+    margin: 10px;
 }
 
 .img{
@@ -150,10 +152,12 @@ body{
 .precio{
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
 }
 
 .precio::before{
     content: "$ ";
+    font-weight: 100;
 }
 
 .stock{
@@ -188,6 +192,69 @@ body{
     font-family: 'Montserrat';
     text-decoration: underline;
     margin: 5px 10px;
+}
+
+/* Purchases summary */
+.nameContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.nameContainer .name{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.detallesPurchases{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    align-items: center;
+    margin: 10px;
+}
+
+
+
+.cant{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cant::before{
+    content: "Cantidad : ";
+    font-weight: 100;
+}
+
+.subtotal{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtotal::before{
+    content: "Subtotal : $";
+    font-weight: 100;
+}
+
+.totalContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.total{
+    font-size: 1.5em;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+
+.total::before{
+    content: "Total : $";
+    font-weight: 100;
 }
 
 ::selection{
