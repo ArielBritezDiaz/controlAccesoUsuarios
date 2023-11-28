@@ -66,16 +66,17 @@ require_once("includes/functionCart.php");
             echo '<div class="sortlist">
             <a href="inicio.php?asc"><img src="src/images/sort-up.svg" class="sort-up" title="ordenar ascendente"></a>
             <a href="inicio.php?desc"><img src="src/images/sort-down.svg" class="sort-down" title="ordenar descendente"></a>
-            </div>';
+            ';
         }
 
         // <!-- Ordenar articulos por categoria -->
         if(isset($_GET['categoria'])){
             $categoria = $_GET['categoria'];
-            echo '
+            echo '<div class="sortlist">
             <a href="inicio.php?categoria='.$categoria.'&ascat"><img src="src/images/sort-up.svg" class="sort-up" title="ordenar ascendente"></a>
             <a href="inicio.php?categoria='.$categoria.'&descat"><img src="src/images/sort-down.svg" class="sort-down" title="ordenar descendente"></a>
-            <a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>';
+            <a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>
+            </div>';
             if(isset($_GET['cancel'])){
                 header("location : inicio.php");
                 exit();
@@ -84,7 +85,7 @@ require_once("includes/functionCart.php");
         // <!-- Boton de cancelar ordenamiento -->
         if(isset($_GET['asc']) || isset($_GET['desc'])){
             echo '<a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>
-            </ul>';
+            </div>';
             if(isset($_GET['cancel'])){
                 header("location : inicio.php");
                 exit();
