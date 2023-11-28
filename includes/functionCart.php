@@ -74,11 +74,11 @@ function mostrarCarrito(){
 //Mostrar carrito vacio//
 function mostrarCarritoVacio(){
     echo '<div class="carritoVacio">
-        <img class="carrito" src="src/images/cart.svg">
-        <div class="txt">
-        <p>El carrito de compras esta</p>
-        <a href="inicio.php">Ir a la tienda</a>
-        </div>
+            <img class="carrito" src="src/images/cart.svg">
+            <div class="txt">
+                <p>El carrito de compras esta</p>
+                <a href="inicio.php">Ir a la tienda</a>
+            </div>
         </div>';
 }
 

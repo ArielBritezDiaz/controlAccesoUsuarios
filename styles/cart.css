@@ -208,3 +208,27 @@ body{
     background: #e01111;
     border-radius: 8px;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px){
+    .carritoVacio{
+        flex-direction: column;
+    }
+
+    .carritoVacio .carrito{
+        width: 100px;
+        height: auto;
+    }
+    .carritoVacio .txt{
+        flex-direction: column;
+    }
+    .txt p{
+        font-size: 1.7em;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .txt a{
+        font-weight: bold;
+        font-size: 1.7em;
+    }
+}
