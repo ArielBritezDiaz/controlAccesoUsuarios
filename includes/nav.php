@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- nav -->
-    <header class="container">
+    <header class="containerHeader">
     <img src="src/images/logo/logor&w.svg" class="logo">
     <button class="abrir" id="abrir"><i class="fa-solid fa-bars" style="color: #f0f8ff;"></i></button>
     <nav class="nav" id="nav">
@@ -26,24 +26,24 @@
                 <!-- Inicio -->
                 <li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>
                 <!-- Carrito de compras -->
-                <hr>
+                <hr class="hideLine">
                 <li><a href="cart.php"><i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i> Carrito</a></li>
                 <!-- CMF 3D -->
-                <hr>
+                <hr class="hideLine">
                 <li><a href="https://marianojsb.github.io/cmf3d.github.io/"><img src="src/images/logo/cmf-3d/resize.svg"> Solicitar pedido</a></li>
-                <hr>
+                <hr class="hideLine">
                 <?php
                 if(isset($_SESSION['usuario'])){
                     //Perfil
                     echo '<li>
                     <a href="perfil.php"><i class="fa-solid fa-user" style="color: #f0f8ff;"></i> Perfil</a>
                     </li>
-                    <hr>';
+                    <hr class="hideLine">';
                     //Publicar
                     echo '<li>
                     <a href="publicar.php"><i class="fa-solid fa-cloud-arrow-up" style="color: #f0f8ff;"></i> Publicar</a>
                     </li>
-                    <hr>';
+                    <hr class="hideLine">';
                     //Salir
                     echo '<li>
                     <a href="logout.php"><i class="fa-solid fa-right-from-bracket" style="color: #f0f8ff;"></i> Salir</a>
@@ -53,7 +53,7 @@
                     echo '<li>
                     <a href="form_registro.html"><i class="fa-solid fa-user-plus" style="color: #f0f8ff;"></i> Registrarse</a>
                     </li>
-                    <hr>';
+                    <hr class="hideLine">';
                     //Ingresar
                     echo '<li>
                     <a href="login.php"><i class="fa-solid fa-door-open" style="color: #f0f8ff;"></i> Ingresar</a>

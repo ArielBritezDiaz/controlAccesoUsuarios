@@ -23,8 +23,6 @@ require_once('includes/showArticles.php');
     <title>Publicacion</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
     <?php
     include("includes/nav.php");
     ?>

@@ -101,6 +101,20 @@ article p{
     background-color: #cc0000;
 }
 
+/* Scroll styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0c0F; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e01111;
+    border-radius: 8px;
+}
+
 /* Mobile design */
 @media screen and (max-width: 400px) {
     .slider {

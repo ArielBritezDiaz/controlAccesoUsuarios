@@ -22,11 +22,9 @@ require_once('includes/functionCart.php');
     <title>Carrito</title>
 </head>
 <body>
-    <header>
     <?php
     include("includes/nav.php");
     ?>
-    </header>
     <section>
     <?php
     //Agregar producto al carrito//

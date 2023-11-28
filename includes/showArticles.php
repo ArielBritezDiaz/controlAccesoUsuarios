@@ -23,7 +23,6 @@
         $query = mysqli_query($conexion, $sql);
         echo '<script>window.location.hash = "#stay";</script>';
         while($registro=mysqli_fetch_assoc($query)){
-            $id_u = $_SESSION['ID_u'];
             if($registro['stock'] > 0){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
@@ -32,16 +31,14 @@
                         </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
-                        <p class="stock">Stock : '.$registro['stock'].'</p>';
-                        if($registro['id_usuario'] != $id_u){
-                            echo '<a href="cart.php?id_articulo='.$registro['id_articulo'].'">
-                            <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
-                            </a>';
+                        <p class="stock">Stock : '.$registro['stock'].'</p>
+                        <a href="cart.php?id_articulo='.$registro['id_articulo'].'">
+                        <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
+                        </a>';
                         }
                     echo '</div>';
         }
     }
-}
 
     //Mostrar articulos ordenados de forma descendente
     function orderDesc($buscar = ""){
@@ -50,7 +47,6 @@
         $query = mysqli_query($conexion, $sql);
         echo '<script>window.location.hash = "#stay";</script>';
         while($registro=mysqli_fetch_assoc($query)){
-            $id_u = $_SESSION['ID_u'];
             if($registro['stock'] > 0){
             $format = number_format($registro['precio'], 2, ',', '.');
             echo'<div class="card">
@@ -59,16 +55,15 @@
                         </a>
                         <p class="name">'.$registro['nombre'].'</p>
                         <p class="price">$'.$format.'</p>
-                        <p class="stock">Stock : '.$registro['stock'].'</p>';
-                        if($registro['id_usuario'] != $id_u){
-                            echo '<a href="cart.php?id_articulo='.$registro['id_articulo'].'">
+                        <p class="stock">Stock : '.$registro['stock'].'</p>
+                        <a href="cart.php?id_articulo='.$registro['id_articulo'].'">
                             <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
                             </a>';
                         }
                     echo '</div>';
         }
-    }
 }
+
     //Mostrar todos los articulos
     function showArticles(){
         include ("conexion.php");
@@ -98,7 +93,6 @@
         $query = mysqli_query($conexion, $sql);
         echo '<script>window.location.hash = "#stay";</script>';
         while($article = mysqli_fetch_assoc($query)){
-            $id_u = $_SESSION['ID_u'];
             if($article['stock'] > 0){
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
@@ -108,11 +102,10 @@
                     </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
-                    <p class="stock">Stock : '.$article['stock'].'</p>';
-                    if($article['id_usuario'] != $id_u){
-                        echo '<a href="cart.php?id_articulo='.$article['id_articulo'].'">
-                        <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
-                        </a>';
+                    <p class="stock">Stock : '.$article['stock'].'</p>
+                    <a href="cart.php?id_articulo='.$article['id_articulo'].'">
+                    <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
+                    </a>';
                     }
                 echo '</div>';
         }
@@ -120,7 +113,6 @@
             echo '<p class="empty">No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
         }
     }
-}
 
     //Ordenar articulos por categoria de forma ascendente
     function orderAscCategorie($cat){
@@ -129,7 +121,6 @@
         $query = mysqli_query($conexion, $sql);
         echo '<script>window.location.hash = "#stay";</script>';
         while($article = mysqli_fetch_assoc($query)){
-            $id_u = $_SESSION['ID_u'];
             if($article['stock'] > 0){
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
@@ -139,18 +130,16 @@
                     </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
-                    <p class="stock">Stock : '.$article['stock'].'</p>';
-                    if($article['id_usuario'] != $id_u){
-                        echo '<a href="cart.php?id_articulo='.$article['id_articulo'].'">
-                        <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
-                        </a>';
+                    <p class="stock">Stock : '.$article['stock'].'</p>
+                    <a href="cart.php?id_articulo='.$article['id_articulo'].'">
+                    <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
+                    </a>';
                     }
                 echo '</div>';
         }
         if(mysqli_num_rows($query) <= 0){
             echo '<p class="empty">No hay stock de articulos con la categoria <span class="bold">'.$cat.'</span></p>';
         }
-    }
 }
 
     //Ordenar articulos por categoria de forma descendente
@@ -160,7 +149,6 @@
         $query = mysqli_query($conexion, $sql);
         echo '<script>window.location.hash = "#stay";</script>';
         while($article = mysqli_fetch_assoc($query)){
-            $id_u = $_SESSION['ID_u'];
             if($article['stock'] > 0){
             // Precio formateado //
             $format = number_format($article['precio'], 2, ',', '.');
@@ -170,11 +158,10 @@
                     </a>
                     <p class="name">'.$article['nombre'].'</p>
                     <p class="price">$'.$format.'</p>
-                    <p class="stock">Stock : '.$article['stock'].'</p>';
-                    if($article['id_usuario'] != $id_u){
-                        echo '<a href="cart.php?id_articulo='.$article['id_articulo'].'">
-                        <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
-                        </a>';
+                    <p class="stock">Stock : '.$article['stock'].'</p>
+                    <a href="cart.php?id_articulo='.$article['id_articulo'].'">
+                    <i class="fa-solid fa-cart-shopping" style="color: #f0f8ff;"></i>Agregar
+                    </a>';
                     }
                 echo '</div>';
         }
@@ -182,7 +169,7 @@
             echo '<p class="empty">No hay stock de articulos con la categoria <span  class="bold">'.$cat.'</span></p>';
         }
     }
-}
+
     // Mostrar las publicaciones de los usuarios
     function showPublishing($id_user){
         include("conexion.php");
@@ -238,7 +225,6 @@
             $sql = "SELECT * FROM articulos WHERE id_articulo = '$id'";
             $query = mysqli_query($conexion, $sql);
             while($registro = mysqli_fetch_assoc($query)){
-                $id_u = $_SESSION['ID_u'];
                 // Obtener el nombre del usuario utilizando id_usuario
                 $id_usuario = $registro['id_usuario'];
                 $sql2 = "SELECT Nbr_u FROM usuarios WHERE ID_u = '$id_usuario'";
@@ -307,18 +293,14 @@
                             </div>';
                         }
                     echo '
-                        <p class="state">Estado : '.$registro['estado'].'</p>';
-                        if($registro['id_usuario'] != $id_u){
-                            echo '<a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart">
-                            <i class="fa-solid fa-cart-shopping"></i> Agregar al carrito
-                            </a>';
+                        <p class="state">Estado : '.$registro['estado'].'</p>
+                        <a href="cart.php?id_articulo='.$registro['id_articulo'].'" class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i> Agregar al carrito
+                        </a>
+                        </div>';
                         }
-                        echo '</div>
-                </div>';
-        }
-}
-
+                echo '</div>';
+    }
 ?>
-
 </body>
 </html>

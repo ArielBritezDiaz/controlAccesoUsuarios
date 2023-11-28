@@ -26,13 +26,10 @@ require_once("includes/functionCart.php");
     <title>Inicio</title>
 </head>
 <body>
-    <!-- Header -->
-    <!-- <header class="header"> -->
     <?php
     include("includes/nav.php");
     ?>
-        <div class="slider"></div>
-    <!-- </header> -->
+    <div class="slider"></div>
 
     <!-- Categories section -->
     <section class="categories" id="categories">

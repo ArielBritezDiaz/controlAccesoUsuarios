@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.containerHeader{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -42,17 +42,19 @@ a{
     display: none;
 }
 
-hr{
+.hideLine{
     display: none;
 }
 
 /* Mobile design */
 @media screen and (max-width: 400px) {
-    .container{
-        justify-content: space-between;
-        margin: 0 30px;
-    }
-        hr{
+        .containerHeader{
+            justify-content: space-between;
+        }
+        .abrir, .logo{
+            margin: 0 30px;
+        }
+        .hideLine{
             display: block;
         }
         .abrir,
