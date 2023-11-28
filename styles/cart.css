@@ -214,7 +214,6 @@ body{
     .carritoVacio{
         flex-direction: column;
     }
-
     .carritoVacio .carrito{
         width: 100px;
         height: auto;
