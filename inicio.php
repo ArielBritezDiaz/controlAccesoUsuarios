@@ -27,12 +27,12 @@ require_once("includes/functionCart.php");
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <!-- <header class="header"> -->
     <?php
     include("includes/nav.php");
     ?>
         <div class="slider"></div>
-    </header>
+    <!-- </header> -->
 
     <!-- Categories section -->
     <section class="categories" id="categories">
