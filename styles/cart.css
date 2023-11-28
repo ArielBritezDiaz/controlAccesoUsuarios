@@ -194,3 +194,17 @@ body{
     justify-content: space-between;
     padding: 0 10px;
 }
+
+/* Scroll styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0c0F; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e01111;
+    border-radius: 8px;
+}
