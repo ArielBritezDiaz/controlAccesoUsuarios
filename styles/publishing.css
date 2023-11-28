@@ -139,3 +139,53 @@ body{
 .cart:hover i {
     color: #e01111;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px){
+    .userName{
+        display: none;
+    }
+    .img{
+        display: block;
+        margin: 10px auto;
+        max-width: 300px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .name{
+        font-size: 2em;
+        margin: 0;
+        text-align: start;
+    }
+    .description{
+        font-size: 1.8em;
+        margin: 10px 0;
+        text-align: start;
+    }
+    .price{
+        font-size: 2.3em;
+        margin: 10px 0;
+        text-align: start;
+        font-weight: bold;
+    }
+    .stock{
+        font-size: 1.8em;
+        margin: 10px 0;
+        text-align: start;
+        font-weight: bold;
+    }
+    .categorie{
+        font-size: 1.8em;
+        margin: 10px 0;
+        text-align: start;
+    }
+    .state{
+        font-size: 1.8em;
+        margin: 10px 0;
+        text-align: start;
+    }
+    .cart{
+        margin: 10px 0;
+    }
+}
