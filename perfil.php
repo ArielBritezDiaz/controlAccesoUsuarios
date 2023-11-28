@@ -71,8 +71,10 @@ require_once("includes/functionCart.php");
         <div class="purchases">
         <?php
         echo '
-        <p class="published">Mis compras</p>
-        <hr class="divisor">';
+        <div class="rotate">
+        <p class="publishedt">Mis compras</p>
+        <hr class="divisor">
+        </div>';
         showPurchases($_SESSION['ID_u']);
         ?>
         </div>

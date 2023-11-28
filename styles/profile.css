@@ -44,6 +44,12 @@ body{
     color: aliceblue;
 }
 
+.publishedt{
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    color: aliceblue;
+}
+
 .summary{
     background-color: #641414;
     width: 450px;
@@ -52,10 +58,9 @@ body{
     font-family: 'Montserrat';
     font-size: 1.5em;
     cursor: pointer;
-    
 }
 
-.purchases .published{
+.purchases .publishedt{
     text-align: end;
 }
 
@@ -149,8 +154,6 @@ body{
     margin: 10px;
 }
 
-
-
 .cant{
     font-size: 1.2em;
     font-weight: bold;
@@ -204,4 +207,42 @@ body{
 ::selection{
     color: wheat;
     background-color: #cc0000;
+}
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .summaryContainer {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .rotate{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .purchases .publishedt{
+        font-family: 'Montserrat';
+        font-size: 1.5em;
+        color: aliceblue;
+        text-align: center;
+    }
+    .divisorLine{
+        margin: 30px 0;
+    }
+    .summary{
+        width: 300px;
+    }
+    .details{
+        max-width: 300px;
+    }
+    .detalles{
+        flex-direction: column;
+    }
+    .details .delete{
+        justify-content: center;
+    }
+    .detallesPurchases{
+        flex-direction: column;
+    }
 }
