@@ -44,52 +44,11 @@ require_once("includes/functionCart.php");
             }
             ?>    
     </label>
-        <!-- <input type="submit" name="upload" value="Actualizar foto" class="send"> -->
     </form>
-    
     <?php
 
     if(isset($_SESSION['usuario'])){
-        echo '<div class="edit">';
-
-        //Editar el nuevo nombre//
-        if(isset($_GET['edit'])){
-            $id_edit = $_SESSION['ID_u'];
-            $sql = "SELECT * FROM usuarios WHERE ID_u = '$id_edit'";
-            $buscarRegistro = mysqli_query($conexion, $sql);
-            $registro = mysqli_fetch_assoc($buscarRegistro);
-
-            echo '<form action="" method="POST">
-            <input type="text" placeholder='.$_SESSION['usuario'].' pattern=".{8,}" min="8" required name="usuario" class="editUser">
-            <input type="submit" value="Actualizar nombre" name="actualizar" style="cursor:pointer" class="sendUser">
-            </form>
-            <a href="perfil.php?cancel" class="cancel">
-                <img src="src/images/mark.svg">
-            </a>';
-            if(isset($_GET['cancel'])){
-                header('Location: perfil.php');
-            exit();
-            }
-        }else{
         echo '<p class="userName">'.$_SESSION['usuario'].'</p>';
-        echo '<a href="perfil.php?edit"><img src="src/images/pencil.svg" class="pencil" title="Editar nombre"></a>
-        </div>';
-        }
-
-        //Ejecutar la modificacion de nombre//
-        if(isset($_POST['actualizar'])){
-            $nombre = $_POST['usuario'];
-            $sql2 = "UPDATE usuarios SET Nbr_u = '$nombre' WHERE ID_u = '$id_edit'";
-            $editar = mysqli_query($conexion, $sql2);
-            //Actualizamos en nuevo nombre en la pagina
-            if($editar){
-                $_SESSION['usuario'] = $nombre;
-                //Recargamos la pagina//
-                header('Location: perfil.php');
-            exit();
-            }
-        }
-
     }
     ?>
     <div class="summaryContainer">
