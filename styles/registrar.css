@@ -116,3 +116,18 @@ input:invalid + i::before{
     color: wheat;
     background-color: #cc0000;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .input-container input{
+        width: 300px;
+        margin: 10px auto;
+    }
+    .input-container i {
+        left: 70px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+    }
+}
