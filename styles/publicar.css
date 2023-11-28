@@ -201,3 +201,29 @@ input[type=number]::-webkit-outer-spin-button {
     color: wheat;
     background-color: #cc0000;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .titleTxt{
+        font-size: 1.3em;
+    }
+    .titleTxt::after{
+        font-size: 1.6em;
+    }
+    
+    .titleTxt::before{
+        font-size: 1.6em;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .container .left input, .container .left textarea{
+        display: block;
+        margin: 30px auto;
+    }
+    .container .right label, .container .right .selects, .container .right input{
+        display: block;
+        margin: 30px auto;
+    }
+}
