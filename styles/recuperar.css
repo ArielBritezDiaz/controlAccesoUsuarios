@@ -136,3 +136,30 @@ input:invalid + i::before{
     color: wheat;
     background-color: #cc0000;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    label{
+        text-align: center;
+        font-size: 1.8em;
+        margin: 10px;
+    }
+    .input-container input{
+        width: 300px;
+        margin: 10px auto;
+    }
+    .input-container i{
+        left: 20px;
+    }
+    .title{
+        text-align: center;
+        font-size: 2em;
+    }
+    .input-container-password input{
+        width: 300px;
+        margin: 10px auto;
+    }
+    .input-container-password i{
+        left: 40px;
+    }
+}
