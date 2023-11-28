@@ -201,6 +201,7 @@ body{
         margin-top: 15px;
     }
     .mark{
-        margin: 0 10px;
+        display: block;
+        margin: 10px auto 0 auto;
     }
 }

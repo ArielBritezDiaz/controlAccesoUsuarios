@@ -66,7 +66,7 @@ require_once("includes/functionCart.php");
             echo '<div class="sortlist">
             <a href="inicio.php?asc"><img src="src/images/sort-up.svg" class="sort-up" title="ordenar ascendente"></a>
             <a href="inicio.php?desc"><img src="src/images/sort-down.svg" class="sort-down" title="ordenar descendente"></a>
-            ';
+            </div>';
         }
 
         // <!-- Ordenar articulos por categoria -->
@@ -84,8 +84,7 @@ require_once("includes/functionCart.php");
         }
         // <!-- Boton de cancelar ordenamiento -->
         if(isset($_GET['asc']) || isset($_GET['desc'])){
-            echo '<a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>
-            </div>';
+            echo '<a href="inicio.php?cancel" class="cancel"><img src="src/images/mark.svg" class="mark" title="cancelar ordenamiento"></a>';
             if(isset($_GET['cancel'])){
                 header("location : inicio.php");
                 exit();
