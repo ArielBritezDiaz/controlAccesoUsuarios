@@ -130,3 +130,31 @@ input:focus + i{
     color: #f0f8ff;
     background-color: #cc0000;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .input-container input{
+        width: 300px;
+        margin: 10px auto;
+    }
+
+    .input-container i {
+        left: 70px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+    }
+
+    .recuperar{
+        margin: 10px;
+    }
+
+    .enviar{
+        margin: 10px auto;
+    }
+
+    .registrar{
+        margin: 10px;
+    }
+}
