@@ -27,8 +27,8 @@
             </span></a>
         </div>
         <div class="info">
-            <p>© 2023 CMF engines</p>
             <p>cmfenginescorporation@gmail.com</p>
+            <p>© 2023 CMF engines</p>
         </div>
     </footer>
 </body>

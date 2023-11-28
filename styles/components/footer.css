@@ -70,3 +70,16 @@
     margin: 10px;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .contact{
+        font-size: 1.8em;
+    }
+    .info{
+        display: block;
+    }
+    .info p{
+        text-align: center;
+    }
+}
