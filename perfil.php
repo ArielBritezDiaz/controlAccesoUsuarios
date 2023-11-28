@@ -77,27 +77,7 @@ require_once("includes/functionCart.php");
         ?>
         </div>
     </div>
-    <?php
-
-     //Eliminar usuario//
-    if(isset($_GET['eliminar'])){
-        $id_eliminar = $_SESSION['ID_u'];
-        $sql = "DELETE FROM usuarios WHERE ID_u = '$id_eliminar'";
-        $query = mysqli_query($conexion, $sql);
-
-        if($query){
-            session_destroy();
-            echo '<script>
-                window.location = "inicio.php"
-            </script>';
-        }
-
-    }else{
-    echo '<a href="perfil.php?eliminar"
-        onClick="return confirm(\'¿Seguro que desea comprar?\')">Eliminar cuenta
-        </a>';
-    }
-    ?>
+    
     </section>
     <?php
     include("includes/footer.php");
