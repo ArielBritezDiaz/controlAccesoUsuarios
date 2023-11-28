@@ -100,3 +100,20 @@ article p{
     color: wheat;
     background-color: #cc0000;
 }
+
+/* Mobile design */
+@media screen and (max-width: 400px) {
+    .slider {
+        height: calc(40vw * 1);
+    }
+    .categories{
+        height: 80vh;
+    }
+    .categories img {
+        height: 250px;
+        width: 100px;
+    }
+    article p {
+        font-size: 1.2em;
+    }
+}
