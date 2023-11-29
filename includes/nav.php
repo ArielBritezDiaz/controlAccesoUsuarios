@@ -23,6 +23,7 @@
     <nav class="nav" id="nav">
             <button class="cerrar" id="cerrar"><i class="fa-solid fa-xmark" style="color: #0c0c0f;"></i></button>
             <ul class="list">
+                <img src="src/images/logo/logoa&b.svg" id="logoNav">
                 <!-- Inicio -->
                 <li><a href="inicio.php"><i class="fa-solid fa-house" style="color: #f0f8ff;"></i> Inicio</a></li>
                 <!-- Carrito de compras -->
