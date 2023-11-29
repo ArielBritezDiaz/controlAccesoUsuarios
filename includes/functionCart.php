@@ -44,7 +44,7 @@ function mostrarCarrito(){
     $total = 0;
     echo '<div class="title">
     <p>Carrito de compras</p>
-    <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #0C0C0F;"></i></a>
+    <a href="cart.php?vaciar"><i class="fa-solid fa-trash-can" style="color: #0C0C0F; font-size:2em;"></i></a>
     </div>
     <hr class="divisorItem">';
     foreach($carrito as $index => $producto){
